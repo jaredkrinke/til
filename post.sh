@@ -9,5 +9,4 @@ echo "title: $title" >> $path
 echo "date: $(date -I)" >> $path
 echo "---" >> $path
 vim $path
-./build.sh
 
