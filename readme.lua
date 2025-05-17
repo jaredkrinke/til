@@ -4,8 +4,10 @@ local readme = [[
 # Today, I Learned
 Here's a collection of things I've learned or found interesting:
 
+| Date | Title |
+|---|---|
 <% for _, item in ipairs(table.sortBy(items, "date", true)) do -%>
-* [<%- item.title %>](<%- site.url %><%- string.gsub(item.path, "%.md$", ".html") %>)
+| <%= item.date -%> | [<%- item.title %>](<%- site.url %><%- string.gsub(item.path, "%.md$", ".html") %>) |
 <% end -%>
 ]]
 
