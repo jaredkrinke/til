@@ -14,6 +14,6 @@ return {
 	extractFrontmatter("%.md$"),
 	aggregate("README.md", "%.md$"),
 	applyTemplates({ { "README.md", readme } }),
-	writeToDestination("docs", "README.md"),
+	writeToDestination(".", "README.md"),
 }
 
