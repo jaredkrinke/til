@@ -2,7 +2,7 @@
 
 read title
 
-path="content/$1.md"
+path="src/$1.md"
 
 echo "---" >> $path
 echo "title: $title" >> $path
