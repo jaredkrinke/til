@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Use &quot;!&quot; to invert criteria in the &quot;find&quot; command</title>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<link rel="stylesheet" href="style.css" />
+<link rel="icon" href="data:," />
+
+</head>
+<body>
+<main>
+<header>
+<h1>Use &quot;!&quot; to invert criteria in the &quot;find&quot; command</h1>
+<p><time datetime="2025-05-18">May 18, 2025</time></p>
+</header>
+<p>Sometimes, when using the POSIX <code>find</code> command (e.g. <code>find . -name '*.c'</code>), <strong>I want to filter out a few files</strong>. This can be done using the <code>!</code> operator, which applies to critera that follow it.</p>
+<p>Example I used recently:</p>
+<pre><code>find . -name '*.c' ! -path './lua/*'
+</code></pre>
+<p>This finds all <code>.c</code> files in the current directory tree, <em>excluding</em> those under the <code>lua/</code> directory. I piped the result into <a href="https://eradman.com/entrproject/">entr</a> so that a program I was developing would automatically recompile and run when I modified any of its source files.</p>
+
+
+</main>
+</body>
+</html>
