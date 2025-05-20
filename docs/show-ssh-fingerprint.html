@@ -19,7 +19,7 @@
 <p>When you connect to a server the first time using Secure Shell (SSH), you are shown the server's public key fingerprint. How do you validate that fingerprint?</p>
 <ul>
 <li>If it's a public/well-known server, they should publish their SSH fingerprints -- make sure to view them over HTTPS and not unencrypted HTTP</li>
-<li>If it's your own private server, use <code>ssh-keygen -lf &lt;path to *.pub file</code>, e.g.:</li>
+<li>If it's your own private server, use <code>ssh-keygen -lf &lt;path to *.pub file&gt;</code>, e.g.:</li>
 </ul>
 <pre><code>ssh-keygen -lf /etc/ssh/ssh_host_rsa_key.pub
 </code></pre>
