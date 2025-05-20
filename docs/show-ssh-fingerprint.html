@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Use &quot;ssh-keygen -lf&quot; to view SSH server fingerprint before connecting</title>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<link rel="stylesheet" href="style.css" />
+<link rel="icon" href="data:," />
+
+</head>
+<body>
+<main>
+<header>
+<h1>Use &quot;ssh-keygen -lf&quot; to view SSH server fingerprint before connecting</h1>
+<p><time datetime="2025-05-20">May 20, 2025</time></p>
+</header>
+<p>When you connect to a server the first time using Secure Shell (SSH), you are shown the server's public key fingerprint. How do you validate that fingerprint?</p>
+<ul>
+<li>If it's a public/well-known server, they should publish their SSH fingerprints -- make sure to view them over HTTPS and not unencrypted HTTP</li>
+<li>If it's your own private server, use <code>ssh-keygen -lf &lt;path to *.pub file</code>, e.g.:</li>
+</ul>
+<pre><code>ssh-keygen -lf /etc/ssh/ssh_host_rsa_key.pub
+</code></pre>
+<p>I didn't actually learn this <em>today</em>, but it's a command I use frequently enough that I wanted to write it down somewhere.</p>
+
+
+</main>
+</body>
+</html>
