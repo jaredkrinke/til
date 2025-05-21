@@ -7,8 +7,15 @@
 <author>
 <name>Today, I Learned</name>
 </author>
-<updated>2025-05-20T00:00:00.000Z</updated>
+<updated>2025-05-21T00:00:00.000Z</updated>
 
+<entry>
+<title>Kill unresponsive SSH sessions with &quot;Enter, ~, .&quot;</title>
+<id>https://jaredkrinke.github.io/til/kill-unresponsive-ssh.html</id>
+<link rel="alternate" href="https://jaredkrinke.github.io/til/kill-unresponsive-ssh.html"/>
+<updated>2025-05-21T00:00:00.000Z</updated>
+<summary type="text">Kill unresponsive SSH sessions with &quot;Enter, ~, .&quot;</summary>
+</entry>
 <entry>
 <title>Use &quot;ssh-keygen -lf&quot; to view SSH server fingerprint before connecting</title>
 <id>https://jaredkrinke.github.io/til/show-ssh-fingerprint.html</id>
