@@ -3,6 +3,7 @@ Here's a collection of things I've learned or found interesting:
 
 | Date | Title |
 |---|---|
+| 2025-05-23 | [Early C only used the first few characters of function names](https://jaredkrinke.github.io/til/early-c-id-limites.html) |
 | 2025-05-21 | [Kill unresponsive SSH sessions with "Enter, ~, ."](https://jaredkrinke.github.io/til/kill-unresponsive-ssh.html) |
 | 2025-05-20 | [Use "ssh-keygen -lf" to view SSH server fingerprint before connecting](https://jaredkrinke.github.io/til/show-ssh-fingerprint.html) |
 | 2025-05-19 | [Use ":terminal" in Vim for a better integrated terminal](https://jaredkrinke.github.io/til/vim-terminal.html) |

@@ -7,8 +7,15 @@
 <author>
 <name>Today, I Learned</name>
 </author>
-<updated>2025-05-21T00:00:00.000Z</updated>
+<updated>2025-05-23T00:00:00.000Z</updated>
 
+<entry>
+<title>Early C only used the first few characters of function names</title>
+<id>https://jaredkrinke.github.io/til/early-c-id-limites.html</id>
+<link rel="alternate" href="https://jaredkrinke.github.io/til/early-c-id-limites.html"/>
+<updated>2025-05-23T00:00:00.000Z</updated>
+<summary type="text">Early C only used the first few characters of function names</summary>
+</entry>
 <entry>
 <title>Kill unresponsive SSH sessions with &quot;Enter, ~, .&quot;</title>
 <id>https://jaredkrinke.github.io/til/kill-unresponsive-ssh.html</id>
