@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Safari default styles finally support dark mode</title>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<link rel="stylesheet" href="style.css" />
+<link rel="icon" href="data:," />
+
+</head>
+<body>
+<main>
+<header>
+<h1>Safari default styles finally support dark mode</h1>
+<p><time datetime="2025-05-22">May 22, 2025</time></p>
+</header>
+<p>Despite seeing consistent praise for Apple's accessibility efforts, Safari on iOS always had a glaring issue: dark mode links were dark-blue-on-black when using their default styles (unlike every other browser that chose a reasonable contrast ratio).</p>
+<p>A few days ago, however, I noticed that this issue has finally been fixed! That means <strong>you can finally use dark mode <em>without explicitly specifying colors</em> and have it be legible for the large number of iPhone users out there</strong>. Here's how this site's dark mode is implemented:</p>
+<pre><code class="language-css">:root { color-scheme: light dark; }
+</code></pre>
+<p>That's all that's required, thanks to default styles!</p>
+
+
+</main>
+</body>
+</html>
