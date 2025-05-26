@@ -7,8 +7,15 @@
 <author>
 <name>Today, I Learned</name>
 </author>
-<updated>2025-05-23T00:00:00.000Z</updated>
+<updated>2025-05-25T00:00:00.000Z</updated>
 
+<entry>
+<title>Difference between Vim&#039;s tabstop, softtabstop, and shiftwidth</title>
+<id>https://jaredkrinke.github.io/til/vim-indentation.html</id>
+<link rel="alternate" href="https://jaredkrinke.github.io/til/vim-indentation.html"/>
+<updated>2025-05-25T00:00:00.000Z</updated>
+<summary type="text">Difference between Vim&#039;s tabstop, softtabstop, and shiftwidth</summary>
+</entry>
 <entry>
 <title>Early C only used the first few characters of function names</title>
 <id>https://jaredkrinke.github.io/til/early-c-id-limites.html</id>

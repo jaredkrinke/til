@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Difference between Vim&#039;s tabstop, softtabstop, and shiftwidth</title>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<link rel="stylesheet" href="style.css" />
+<link rel="icon" href="data:," />
+
+</head>
+<body>
+<main>
+<header>
+<h1>Difference between Vim&#039;s tabstop, softtabstop, and shiftwidth</h1>
+<p><time datetime="2025-05-25">May 25, 2025</time></p>
+</header>
+<p>In the past, I only knew about Vim's <code>tabstop</code> setting, but it no longer appears to be sufficient; there are 3 settings you need to understand:</p>
+<ul>
+<li><code>tabstop</code> / <code>ts</code>: width of an actual tab character, in spaces</li>
+<li><code>softtabstop</code> / <code>sts</code>: the amount of space (in spaces) that hitting the Tab key should indent</li>
+<li><code>shiftwidth</code> / <code>sw</code>: the amount of indentation (in spaces) that built-in functionality should insert</li>
+</ul>
+<p>There is also the <code>expandtab</code> setting, which inserts space characters instead of using tabs.</p>
+<p>Now, finally, here is how <em>I</em> use these settings:</p>
+<pre><code class="language-vim">set ts=4
+set sw=4
+</code></pre>
+<p>This makes tabs 4 spaces large, allows (by default) using actual tab characters (instead of 4 spaces), and ensures that built-in language support inserts a single tab for indentation (instead of 2 tabs, which is what you get with <code>ts=4</code> and <code>sw</code> set to its default of 8).</p>
+
+
+</main>
+</body>
+</html>

@@ -3,6 +3,7 @@ Here's a collection of things I've learned or found interesting:
 
 | Date | Title |
 |---|---|
+| 2025-05-25 | [Difference between Vim's tabstop, softtabstop, and shiftwidth](https://jaredkrinke.github.io/til/vim-indentation.html) |
 | 2025-05-23 | [Early C only used the first few characters of function names](https://jaredkrinke.github.io/til/early-c-id-limites.html) |
 | 2025-05-22 | [Safari default styles finally support dark mode](https://jaredkrinke.github.io/til/ios-dark-mode-links-fixed.html) |
 | 2025-05-21 | [Kill unresponsive SSH sessions with "Enter, ~, ."](https://jaredkrinke.github.io/til/kill-unresponsive-ssh.html) |
