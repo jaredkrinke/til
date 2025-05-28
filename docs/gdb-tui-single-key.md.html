@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>GDB has a built-in TUI mode with single key operation</title>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<link rel="stylesheet" href="style.css" />
+<link rel="icon" href="data:," />
+
+</head>
+<body>
+<main>
+<header>
+<h1>GDB has a built-in TUI mode with single key operation</h1>
+<p><time datetime="2025-05-27">May 27, 2025</time></p>
+</header>
+<p><strong>The GNU Debugger (GDB) has a built-in TUI mode</strong> that can be accessed with the <code>tui</code> command or by passing <code>-tui</code> on the command line. It provides:</p>
+<ul>
+<li>Source file view</li>
+<li>Multiple windows (using Emacs keybindings)</li>
+<li><strong>Single Key mode</strong> (enter/exit using Ctrl+x, s)</li>
+</ul>
+<p>That last one is exciting because it allows for quickly stepping through code using:</p>
+<ul>
+<li><code>n</code>: &quot;next&quot; (which I would call &quot;step over&quot;)</li>
+<li><code>s</code>: &quot;step&quot; (which I would call &quot;step into&quot;)</li>
+<li><code>f</code>: &quot;finish&quot; (whicih I would call &quot;step out&quot;)</li>
+</ul>
+<p>I've never enjoyed using GDB because I never took the time to learn it. As someone with extensive experience in WinDbg, I didn't understand how Linux developers could put up with GDB's clunky line-based interface--it turns out they probably don't! I suspect they use GDB's TUI mode, a separate GDB frontend, ... or printf debugging!</p>
+
+
+</main>
+</body>
+</html>
