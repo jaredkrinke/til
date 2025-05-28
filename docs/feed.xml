@@ -11,8 +11,8 @@
 
 <entry>
 <title>GDB has a built-in TUI mode with single key operation</title>
-<id>https://jaredkrinke.github.io/til/gdb-tui-single-key.md.html</id>
-<link rel="alternate" href="https://jaredkrinke.github.io/til/gdb-tui-single-key.md.html"/>
+<id>https://jaredkrinke.github.io/til/gdb-tui-single-key.html</id>
+<link rel="alternate" href="https://jaredkrinke.github.io/til/gdb-tui-single-key.html"/>
 <updated>2025-05-27T00:00:00.000Z</updated>
 <summary type="text">GDB has a built-in TUI mode with single key operation</summary>
 </entry>

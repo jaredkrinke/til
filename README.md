@@ -3,7 +3,7 @@ Here's a collection of things I've learned or found interesting:
 
 | Date | Title |
 |---|---|
-| 2025-05-27 | [GDB has a built-in TUI mode with single key operation](https://jaredkrinke.github.io/til/gdb-tui-single-key.md.html) |
+| 2025-05-27 | [GDB has a built-in TUI mode with single key operation](https://jaredkrinke.github.io/til/gdb-tui-single-key.html) |
 | 2025-05-25 | [Difference between Vim's tabstop, softtabstop, and shiftwidth](https://jaredkrinke.github.io/til/vim-indentation.html) |
 | 2025-05-23 | [Early C only used the first few characters of function names](https://jaredkrinke.github.io/til/early-c-id-limites.html) |
 | 2025-05-22 | [Safari default styles finally support dark mode](https://jaredkrinke.github.io/til/ios-dark-mode-links-fixed.html) |
