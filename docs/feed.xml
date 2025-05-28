@@ -7,8 +7,15 @@
 <author>
 <name>Today, I Learned</name>
 </author>
-<updated>2025-05-27T00:00:00.000Z</updated>
+<updated>2025-05-28T00:00:00.000Z</updated>
 
+<entry>
+<title>Use &quot;exuberant-ctags&quot; for &quot;go to definition&quot; in Vim</title>
+<id>https://jaredkrinke.github.io/til/vim-code-indexing.html</id>
+<link rel="alternate" href="https://jaredkrinke.github.io/til/vim-code-indexing.html"/>
+<updated>2025-05-28T00:00:00.000Z</updated>
+<summary type="text">Use &quot;exuberant-ctags&quot; for &quot;go to definition&quot; in Vim</summary>
+</entry>
 <entry>
 <title>GDB has a built-in TUI mode with single key operation</title>
 <id>https://jaredkrinke.github.io/til/gdb-tui-single-key.html</id>
