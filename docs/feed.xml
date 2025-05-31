@@ -7,14 +7,40 @@
 <author>
 <name>Today, I Learned</name>
 </author>
-<updated>2025-05-28T00:00:00.000Z</updated>
+<updated>2025-05-31T00:00:00.000Z</updated>
 
+<entry>
+<title>Get the path of commands using &quot;realpath&quot; and &quot;which&quot;</title>
+<id>https://jaredkrinke.github.io/til/absolute-path-of-command.html</id>
+<link rel="alternate" href="https://jaredkrinke.github.io/til/absolute-path-of-command.html"/>
+<updated>2025-05-31T00:00:00.000Z</updated>
+<summary type="text">Get the path of commands using &quot;realpath&quot; and &quot;which&quot;</summary>
+<content type="html">&lt;p&gt;Sometimes you need to load resources that are relative to some tool. On POSIX (with a compatible shell), you can use:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;realpath $(which command)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This finds the absolute path (including resolving links) to the command named &lt;code&gt;command&lt;/code&gt; which is on &lt;code&gt;PATH&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;And if you need to run a command in the directory of a tool:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;pushd $(realpath $(which command))
+command ...
+popd
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+</entry>
 <entry>
 <title>Use &quot;exuberant-ctags&quot; for &quot;go to definition&quot; in Vim</title>
 <id>https://jaredkrinke.github.io/til/vim-code-indexing.html</id>
 <link rel="alternate" href="https://jaredkrinke.github.io/til/vim-code-indexing.html"/>
 <updated>2025-05-28T00:00:00.000Z</updated>
 <summary type="text">Use &quot;exuberant-ctags&quot; for &quot;go to definition&quot; in Vim</summary>
+<content type="html">&lt;p&gt;I re-learned today that &lt;strong&gt;you can get &amp;quot;jump to definition&amp;quot; in Vim using &lt;code&gt;exuberant-ctags&lt;/code&gt;&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Install &lt;code&gt;exuberant-ctags&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;ctags -R *&lt;/code&gt; in your directory&lt;/li&gt;
+&lt;li&gt;In Vim, using &lt;code&gt;Ctrl-]&lt;/code&gt; to go to a definition (prefix with &lt;code&gt;Ctrl+W&lt;/code&gt; to open in a new window)&lt;/li&gt;
+&lt;li&gt;Use &lt;code&gt;Ctrl+T&lt;/code&gt; to go back&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Note: &lt;strong&gt;&lt;code&gt;ctags&lt;/code&gt; from Emacs doesn&#039;t work&lt;/strong&gt;, so make sure to install something better, like &lt;code&gt;exuberant-ctags&lt;/code&gt; (or possible &lt;code&gt;universal-ctags&lt;/code&gt;--though I haven&#039;t tried that one).&lt;/p&gt;
+</content>
 </entry>
 <entry>
 <title>GDB has a built-in TUI mode with single key operation</title>
@@ -22,6 +48,20 @@
 <link rel="alternate" href="https://jaredkrinke.github.io/til/gdb-tui-single-key.html"/>
 <updated>2025-05-27T00:00:00.000Z</updated>
 <summary type="text">GDB has a built-in TUI mode with single key operation</summary>
+<content type="html">&lt;p&gt;&lt;strong&gt;The GNU Debugger (GDB) has a built-in TUI mode&lt;/strong&gt; that can be accessed with the &lt;code&gt;tui&lt;/code&gt; command or by passing &lt;code&gt;-tui&lt;/code&gt; on the command line. It provides:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Source file view&lt;/li&gt;
+&lt;li&gt;Multiple windows (using Emacs keybindings)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Single Key mode&lt;/strong&gt; (enter/exit using Ctrl+x, s)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;That last one is exciting because it allows for quickly stepping through code using:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;n&lt;/code&gt;: &amp;quot;next&amp;quot; (which I would call &amp;quot;step over&amp;quot;)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;s&lt;/code&gt;: &amp;quot;step&amp;quot; (which I would call &amp;quot;step into&amp;quot;)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;f&lt;/code&gt;: &amp;quot;finish&amp;quot; (whicih I would call &amp;quot;step out&amp;quot;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I&#039;ve never enjoyed using GDB because I never took the time to learn it. As someone with extensive experience in WinDbg, I didn&#039;t understand how Linux developers could put up with GDB&#039;s clunky line-based interface--it turns out they probably don&#039;t! I suspect they use GDB&#039;s TUI mode, a separate GDB frontend, ... or printf debugging!&lt;/p&gt;
+</content>
 </entry>
 <entry>
 <title>Difference between Vim&#039;s tabstop, softtabstop, and shiftwidth</title>
@@ -29,6 +69,19 @@
 <link rel="alternate" href="https://jaredkrinke.github.io/til/vim-indentation.html"/>
 <updated>2025-05-25T00:00:00.000Z</updated>
 <summary type="text">Difference between Vim&#039;s tabstop, softtabstop, and shiftwidth</summary>
+<content type="html">&lt;p&gt;In the past, I only knew about Vim&#039;s &lt;code&gt;tabstop&lt;/code&gt; setting, but it no longer appears to be sufficient; there are 3 settings you need to understand:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;tabstop&lt;/code&gt; / &lt;code&gt;ts&lt;/code&gt;: width of an actual tab character, in spaces&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;softtabstop&lt;/code&gt; / &lt;code&gt;sts&lt;/code&gt;: the amount of space (in spaces) that hitting the Tab key should indent&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;shiftwidth&lt;/code&gt; / &lt;code&gt;sw&lt;/code&gt;: the amount of indentation (in spaces) that built-in functionality should insert&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There is also the &lt;code&gt;expandtab&lt;/code&gt; setting, which inserts space characters instead of using tabs.&lt;/p&gt;
+&lt;p&gt;Now, finally, here is how &lt;em&gt;I&lt;/em&gt; use these settings:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-vim&quot;&gt;set ts=4
+set sw=4
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This makes tabs 4 spaces large, allows (by default) using actual tab characters (instead of 4 spaces), and ensures that built-in language support inserts a single tab for indentation (instead of 2 tabs, which is what you get with &lt;code&gt;ts=4&lt;/code&gt; and &lt;code&gt;sw&lt;/code&gt; set to its default of 8).&lt;/p&gt;
+</content>
 </entry>
 <entry>
 <title>Early C only used the first few characters of function names</title>
@@ -36,54 +89,9 @@
 <link rel="alternate" href="https://jaredkrinke.github.io/til/early-c-id-limites.html"/>
 <updated>2025-05-23T00:00:00.000Z</updated>
 <summary type="text">Early C only used the first few characters of function names</summary>
-</entry>
-<entry>
-<title>Safari default styles finally support dark mode</title>
-<id>https://jaredkrinke.github.io/til/ios-dark-mode-links-fixed.html</id>
-<link rel="alternate" href="https://jaredkrinke.github.io/til/ios-dark-mode-links-fixed.html"/>
-<updated>2025-05-22T00:00:00.000Z</updated>
-<summary type="text">Safari default styles finally support dark mode</summary>
-</entry>
-<entry>
-<title>Kill unresponsive SSH sessions with &quot;Enter, ~, .&quot;</title>
-<id>https://jaredkrinke.github.io/til/kill-unresponsive-ssh.html</id>
-<link rel="alternate" href="https://jaredkrinke.github.io/til/kill-unresponsive-ssh.html"/>
-<updated>2025-05-21T00:00:00.000Z</updated>
-<summary type="text">Kill unresponsive SSH sessions with &quot;Enter, ~, .&quot;</summary>
-</entry>
-<entry>
-<title>Use &quot;ssh-keygen -lf&quot; to view SSH server fingerprint before connecting</title>
-<id>https://jaredkrinke.github.io/til/show-ssh-fingerprint.html</id>
-<link rel="alternate" href="https://jaredkrinke.github.io/til/show-ssh-fingerprint.html"/>
-<updated>2025-05-20T00:00:00.000Z</updated>
-<summary type="text">Use &quot;ssh-keygen -lf&quot; to view SSH server fingerprint before connecting</summary>
-</entry>
-<entry>
-<title>Use &quot;:terminal&quot; in Vim for a better integrated terminal</title>
-<id>https://jaredkrinke.github.io/til/vim-terminal.html</id>
-<link rel="alternate" href="https://jaredkrinke.github.io/til/vim-terminal.html"/>
-<updated>2025-05-19T00:00:00.000Z</updated>
-<summary type="text">Use &quot;:terminal&quot; in Vim for a better integrated terminal</summary>
-</entry>
-<entry>
-<title>Use &quot;!&quot; to invert criteria in the &quot;find&quot; command</title>
-<id>https://jaredkrinke.github.io/til/inverting-find-criteria.html</id>
-<link rel="alternate" href="https://jaredkrinke.github.io/til/inverting-find-criteria.html"/>
-<updated>2025-05-18T00:00:00.000Z</updated>
-<summary type="text">Use &quot;!&quot; to invert criteria in the &quot;find&quot; command</summary>
-</entry>
-<entry>
-<title>Automatically wrapping lines in Vim and Emacs</title>
-<id>https://jaredkrinke.github.io/til/wrap-lines-vim-emacs.html</id>
-<link rel="alternate" href="https://jaredkrinke.github.io/til/wrap-lines-vim-emacs.html"/>
-<updated>2025-05-17T00:00:00.000Z</updated>
-<summary type="text">Automatically wrapping lines in Vim and Emacs</summary>
-</entry>
-<entry>
-<title>Use &quot;:set paste&quot; when pasting into Vim</title>
-<id>https://jaredkrinke.github.io/til/vim-paste-mode.html</id>
-<link rel="alternate" href="https://jaredkrinke.github.io/til/vim-paste-mode.html"/>
-<updated>2025-05-16T00:00:00.000Z</updated>
-<summary type="text">Use &quot;:set paste&quot; when pasting into Vim</summary>
+<content type="html">&lt;p&gt;It turns out there&#039;s a reason that the C standard library has such cryptic names for its functions:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Early C (including ANSI C, a.k.a. C89, if I understand correctly) required external functions to have their first 6 characters be unique.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I even saw a claim that &lt;code&gt;strncpy&lt;/code&gt; would have been &lt;code&gt;strcpyn&lt;/code&gt; if not for this limitation. As much as I enjoy the simplicity and ubiquity of C, it &lt;em&gt;does&lt;/em&gt; come with a noticeable amount of annoying baggage.&lt;/p&gt;
+</content>
 </entry>
 </feed>

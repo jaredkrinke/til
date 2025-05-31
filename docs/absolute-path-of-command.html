@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Get the path of commands using &quot;realpath&quot; and &quot;which&quot;</title>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<link rel="stylesheet" href="style.css" />
+<link rel="icon" href="data:," />
+
+</head>
+<body>
+<main>
+<header>
+<h1>Get the path of commands using &quot;realpath&quot; and &quot;which&quot;</h1>
+<p><time datetime="2025-05-31">May 31, 2025</time></p>
+</header>
+<p>Sometimes you need to load resources that are relative to some tool. On POSIX (with a compatible shell), you can use:</p>
+<pre><code class="language-sh">realpath $(which command)
+</code></pre>
+<p>This finds the absolute path (including resolving links) to the command named <code>command</code> which is on <code>PATH</code>.</p>
+<p>And if you need to run a command in the directory of a tool:</p>
+<pre><code class="language-sh">pushd $(realpath $(which command))
+command ...
+popd
+</code></pre>
+
+
+</main>
+</body>
+</html>
