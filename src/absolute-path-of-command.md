@@ -13,7 +13,7 @@ This finds the absolute path (including resolving links) to the command named `c
 And if you need to run a command in the directory of a tool:
 
 ```sh
-pushd $(realpath $(which command))
+pushd $(dirname $(realpath $(which command)))
 command ...
 popd
 ```

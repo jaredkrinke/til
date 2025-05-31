@@ -20,7 +20,7 @@
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;This finds the absolute path (including resolving links) to the command named &lt;code&gt;command&lt;/code&gt; which is on &lt;code&gt;PATH&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;And if you need to run a command in the directory of a tool:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;pushd $(realpath $(which command))
+&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;pushd $(dirname $(realpath $(which command)))
 command ...
 popd
 &lt;/code&gt;&lt;/pre&gt;

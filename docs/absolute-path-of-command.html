@@ -21,7 +21,7 @@
 </code></pre>
 <p>This finds the absolute path (including resolving links) to the command named <code>command</code> which is on <code>PATH</code>.</p>
 <p>And if you need to run a command in the directory of a tool:</p>
-<pre><code class="language-sh">pushd $(realpath $(which command))
+<pre><code class="language-sh">pushd $(dirname $(realpath $(which command)))
 command ...
 popd
 </code></pre>
