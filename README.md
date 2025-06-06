@@ -3,6 +3,7 @@ Here's a collection of things I've learned or found interesting:
 
 | Date | Title |
 |---|---|
+| 2025-06-06 | [Kolmogorov Complexity](https://jaredkrinke.github.io/til/kolmogorov-complexity.html) |
 | 2025-05-31 | [Get the path of commands using "realpath" and "which"](https://jaredkrinke.github.io/til/absolute-path-of-command.html) |
 | 2025-05-28 | [Use "exuberant-ctags" for "go to definition" in Vim](https://jaredkrinke.github.io/til/vim-code-indexing.html) |
 | 2025-05-27 | [GDB has a built-in TUI mode with single key operation](https://jaredkrinke.github.io/til/gdb-tui-single-key.html) |

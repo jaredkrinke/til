@@ -7,8 +7,21 @@
 <author>
 <name>Today, I Learned</name>
 </author>
-<updated>2025-05-31T00:00:00.000Z</updated>
+<updated>2025-06-06T00:00:00.000Z</updated>
 
+<entry>
+<title>Kolmogorov Complexity</title>
+<id>https://jaredkrinke.github.io/til/kolmogorov-complexity.html</id>
+<link rel="alternate" href="https://jaredkrinke.github.io/til/kolmogorov-complexity.html"/>
+<updated>2025-06-06T00:00:00.000Z</updated>
+<summary type="text">Kolmogorov Complexity</summary>
+<content type="html">&lt;p&gt;While reading &lt;a href=&quot;https://ratfactor.com/cards/pl-small&quot;&gt;Small Programs and Languages&lt;/a&gt; on ratfactor.com, I came across &lt;strong&gt;Kolmogorov Complexity&lt;/strong&gt;, which someone described on Wikipedia as:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;the length of a shortest computer program (in a predetermined programming language) that produces the object as output&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I don&#039;t really have any particular reason to use this concept, but I like the idea that there &lt;em&gt;is&lt;/em&gt; a shortest computer program for outputting some result. Rather than write anymore here, I recommend reading the article linked above.&lt;/p&gt;
+</content>
+</entry>
 <entry>
 <title>Get the path of commands using &quot;realpath&quot; and &quot;which&quot;</title>
 <id>https://jaredkrinke.github.io/til/absolute-path-of-command.html</id>
@@ -81,17 +94,6 @@ popd
 set sw=4
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;This makes tabs 4 spaces large, allows (by default) using actual tab characters (instead of 4 spaces), and ensures that built-in language support inserts a single tab for indentation (instead of 2 tabs, which is what you get with &lt;code&gt;ts=4&lt;/code&gt; and &lt;code&gt;sw&lt;/code&gt; set to its default of 8).&lt;/p&gt;
-</content>
-</entry>
-<entry>
-<title>Early C only used the first few characters of function names</title>
-<id>https://jaredkrinke.github.io/til/early-c-id-limites.html</id>
-<link rel="alternate" href="https://jaredkrinke.github.io/til/early-c-id-limites.html"/>
-<updated>2025-05-23T00:00:00.000Z</updated>
-<summary type="text">Early C only used the first few characters of function names</summary>
-<content type="html">&lt;p&gt;It turns out there&#039;s a reason that the C standard library has such cryptic names for its functions:&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Early C (including ANSI C, a.k.a. C89, if I understand correctly) required external functions to have their first 6 characters be unique.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;I even saw a claim that &lt;code&gt;strncpy&lt;/code&gt; would have been &lt;code&gt;strcpyn&lt;/code&gt; if not for this limitation. As much as I enjoy the simplicity and ubiquity of C, it &lt;em&gt;does&lt;/em&gt; come with a noticeable amount of annoying baggage.&lt;/p&gt;
 </content>
 </entry>
 </feed>
