@@ -3,6 +3,7 @@ Here's a collection of things I've learned or found interesting:
 
 | Date | Title |
 |---|---|
+| 2025-06-11 | [Use "VPATH" and ".PATH" for compiling subdirectory source files in Make](https://jaredkrinke.github.io/til/subdir-source-and-make.html) |
 | 2025-06-08 | [Git commits have both an author and a committer](https://jaredkrinke.github.io/til/git-commit-vs-author.html) |
 | 2025-06-06 | [Kolmogorov Complexity](https://jaredkrinke.github.io/til/kolmogorov-complexity.html) |
 | 2025-05-31 | [Get the path of commands using "realpath" and "which"](https://jaredkrinke.github.io/til/absolute-path-of-command.html) |

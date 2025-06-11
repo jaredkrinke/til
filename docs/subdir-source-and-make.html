@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Use &quot;VPATH&quot; and &quot;.PATH&quot; for compiling subdirectory source files in Make</title>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<link rel="stylesheet" href="style.css" />
+<link rel="icon" href="data:," />
+
+</head>
+<body>
+<main>
+<header>
+<h1>Use &quot;VPATH&quot; and &quot;.PATH&quot; for compiling subdirectory source files in Make</h1>
+<p><time datetime="2025-06-11">June 11, 2025</time></p>
+</header>
+<p>GNU Make (<code>gmake</code> on BSDs) and BSD Make (<code>bmake</code> on Linux) handle source files in subdirectories differently:</p>
+<ul>
+<li>GNU Make places compiled object files next to the source files, in their subdirectory</li>
+<li>BSD Make places compiled object files in the Makefile's directory</li>
+</ul>
+<p>This inconsistency is a problem for my current project that uses a polyglot Makefile that works on with both Makes.</p>
+<p>I'm trying to explore this space as little as possible, but my current solution is to use <code>VPATH</code> for GNU Make and <code>.PATH</code> for BSD Make -- these both support searching for source files in subdirectories (while placing object files in the root--i.e. the same directory as the Makefile). This is handy for e.g. when you're pulling in code via Git submodules, but you're compiling a single binary.</p>
+<p>Example:</p>
+<pre><code class="language-makefile"># Support both GNU Make and BSD Make
+
+VPATH = .:lua:lpeg:md4c/src:chtml
+.PATH = ./ lua/ lpeg/ md4c/src/ chtml/
+</code></pre>
+
+
+</main>
+</body>
+</html>

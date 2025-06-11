@@ -7,8 +7,29 @@
 <author>
 <name>Today, I Learned</name>
 </author>
-<updated>2025-06-08T00:00:00.000Z</updated>
+<updated>2025-06-11T00:00:00.000Z</updated>
 
+<entry>
+<title>Use &quot;VPATH&quot; and &quot;.PATH&quot; for compiling subdirectory source files in Make</title>
+<id>https://jaredkrinke.github.io/til/subdir-source-and-make.html</id>
+<link rel="alternate" href="https://jaredkrinke.github.io/til/subdir-source-and-make.html"/>
+<updated>2025-06-11T00:00:00.000Z</updated>
+<summary type="text">Use &quot;VPATH&quot; and &quot;.PATH&quot; for compiling subdirectory source files in Make</summary>
+<content type="html">&lt;p&gt;GNU Make (&lt;code&gt;gmake&lt;/code&gt; on BSDs) and BSD Make (&lt;code&gt;bmake&lt;/code&gt; on Linux) handle source files in subdirectories differently:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GNU Make places compiled object files next to the source files, in their subdirectory&lt;/li&gt;
+&lt;li&gt;BSD Make places compiled object files in the Makefile&#039;s directory&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This inconsistency is a problem for my current project that uses a polyglot Makefile that works on with both Makes.&lt;/p&gt;
+&lt;p&gt;I&#039;m trying to explore this space as little as possible, but my current solution is to use &lt;code&gt;VPATH&lt;/code&gt; for GNU Make and &lt;code&gt;.PATH&lt;/code&gt; for BSD Make -- these both support searching for source files in subdirectories (while placing object files in the root--i.e. the same directory as the Makefile). This is handy for e.g. when you&#039;re pulling in code via Git submodules, but you&#039;re compiling a single binary.&lt;/p&gt;
+&lt;p&gt;Example:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-makefile&quot;&gt;# Support both GNU Make and BSD Make
+
+VPATH = .:lua:lpeg:md4c/src:chtml
+.PATH = ./ lua/ lpeg/ md4c/src/ chtml/
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+</entry>
 <entry>
 <title>Git commits have both an author and a committer</title>
 <id>https://jaredkrinke.github.io/til/git-commit-vs-author.html</id>
@@ -69,27 +90,6 @@ popd
 &lt;li&gt;Use &lt;code&gt;Ctrl+T&lt;/code&gt; to go back&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Note: &lt;strong&gt;&lt;code&gt;ctags&lt;/code&gt; from Emacs doesn&#039;t work&lt;/strong&gt;, so make sure to install something better, like &lt;code&gt;exuberant-ctags&lt;/code&gt; (or possible &lt;code&gt;universal-ctags&lt;/code&gt;--though I haven&#039;t tried that one).&lt;/p&gt;
-</content>
-</entry>
-<entry>
-<title>GDB has a built-in TUI mode with single key operation</title>
-<id>https://jaredkrinke.github.io/til/gdb-tui-single-key.html</id>
-<link rel="alternate" href="https://jaredkrinke.github.io/til/gdb-tui-single-key.html"/>
-<updated>2025-05-27T00:00:00.000Z</updated>
-<summary type="text">GDB has a built-in TUI mode with single key operation</summary>
-<content type="html">&lt;p&gt;&lt;strong&gt;The GNU Debugger (GDB) has a built-in TUI mode&lt;/strong&gt; that can be accessed with the &lt;code&gt;tui&lt;/code&gt; command or by passing &lt;code&gt;-tui&lt;/code&gt; on the command line. It provides:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Source file view&lt;/li&gt;
-&lt;li&gt;Multiple windows (using Emacs keybindings)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Single Key mode&lt;/strong&gt; (enter/exit using Ctrl+x, s)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;That last one is exciting because it allows for quickly stepping through code using:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;n&lt;/code&gt;: &amp;quot;next&amp;quot; (which I would call &amp;quot;step over&amp;quot;)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;s&lt;/code&gt;: &amp;quot;step&amp;quot; (which I would call &amp;quot;step into&amp;quot;)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;f&lt;/code&gt;: &amp;quot;finish&amp;quot; (whicih I would call &amp;quot;step out&amp;quot;)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;I&#039;ve never enjoyed using GDB because I never took the time to learn it. As someone with extensive experience in WinDbg, I didn&#039;t understand how Linux developers could put up with GDB&#039;s clunky line-based interface--it turns out they probably don&#039;t! I suspect they use GDB&#039;s TUI mode, a separate GDB frontend, ... or printf debugging!&lt;/p&gt;
 </content>
 </entry>
 </feed>
