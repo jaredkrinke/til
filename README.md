@@ -3,6 +3,7 @@ Here's a collection of things I've learned or found interesting:
 
 | Date | Title |
 |---|---|
+| 2025-06-12 | [Use ":read !" to insert the result of a shell command in Vim](https://jaredkrinke.github.io/til/vim-read-shell-cmd.html) |
 | 2025-06-11 | [Use "VPATH" and ".PATH" for compiling subdirectory source files in Make](https://jaredkrinke.github.io/til/subdir-source-and-make.html) |
 | 2025-06-08 | [Git commits have both an author and a committer](https://jaredkrinke.github.io/til/git-commit-vs-author.html) |
 | 2025-06-06 | [Kolmogorov Complexity](https://jaredkrinke.github.io/til/kolmogorov-complexity.html) |
