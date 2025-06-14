@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Use BackstopJS to graphically compare HTML files</title>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<link rel="stylesheet" href="style.css" />
+<link rel="icon" href="data:," />
+
+</head>
+<body>
+<main>
+<header>
+<h1>Use BackstopJS to graphically compare HTML files</h1>
+<p><time datetime="2025-06-13">June 13, 2025</time></p>
+</header>
+<p>If you've got a pile of static HTML files that you want to graphically compare:</p>
+<ul>
+<li>Install <a href="https://github.com/garris/BackstopJS">BackstopJS</a> (<code>npm install backstopjs</code>)</li>
+<li>Install <a href="https://github.com/fffunction/backstop-crawl">backstop-crawl</a> (<code>npm install backstop-crawl</code>)</li>
+<li>Serve your HTML using Python (<code>python -m http.server -b 127.0.0.1 8888</code>)</li>
+<li>Crawl the site to generate a Backstop config (<code>npx backstop-crawl http://127.0.0.1:8888/</code>)</li>
+<li>Modify the <code>engine</code> field in the generated config to be <code>puppet</code> instead of <code>phantomjs</code> (PhantomJS is no longer supported)</li>
+<li>Generate images (<code>npx backstop test</code>)</li>
+<li>Set generated images as a baseline (<code>npx backstop approve</code>)</li>
+</ul>
+<p>Now, finally, you're set up and can test:</p>
+<ul>
+<li>Regenerate your HTML files (or restart the web server to read from a different directory)</li>
+<li>Generate test images and compare them (<code>npx backstop test</code>)</li>
+</ul>
+<p>In my case, I have been reimplementing my static site generator and I want to ensure the output is roughly the same. I had been using <code>diff -r</code>, but I don't actually care about line-by-line, character-by-character differences, e.g. <code>&amp;apos;</code> and <code>&amp;#39;</code> are visually the same. I'm also reimplementing syntax highlighting and expect those to be slightly different. Hence, I'm using the tools above.</p>
+
+
+</main>
+</body>
+</html>

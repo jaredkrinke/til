@@ -7,8 +7,32 @@
 <author>
 <name>Today, I Learned</name>
 </author>
-<updated>2025-06-12T00:00:00.000Z</updated>
+<updated>2025-06-13T00:00:00.000Z</updated>
 
+<entry>
+<title>Use BackstopJS to graphically compare HTML files</title>
+<id>https://jaredkrinke.github.io/til/graphically-compare-html-files.html</id>
+<link rel="alternate" href="https://jaredkrinke.github.io/til/graphically-compare-html-files.html"/>
+<updated>2025-06-13T00:00:00.000Z</updated>
+<summary type="text">Use BackstopJS to graphically compare HTML files</summary>
+<content type="html">&lt;p&gt;If you&#039;ve got a pile of static HTML files that you want to graphically compare:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Install &lt;a href=&quot;https://github.com/garris/BackstopJS&quot;&gt;BackstopJS&lt;/a&gt; (&lt;code&gt;npm install backstopjs&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Install &lt;a href=&quot;https://github.com/fffunction/backstop-crawl&quot;&gt;backstop-crawl&lt;/a&gt; (&lt;code&gt;npm install backstop-crawl&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Serve your HTML using Python (&lt;code&gt;python -m http.server -b 127.0.0.1 8888&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Crawl the site to generate a Backstop config (&lt;code&gt;npx backstop-crawl http://127.0.0.1:8888/&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Modify the &lt;code&gt;engine&lt;/code&gt; field in the generated config to be &lt;code&gt;puppet&lt;/code&gt; instead of &lt;code&gt;phantomjs&lt;/code&gt; (PhantomJS is no longer supported)&lt;/li&gt;
+&lt;li&gt;Generate images (&lt;code&gt;npx backstop test&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Set generated images as a baseline (&lt;code&gt;npx backstop approve&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now, finally, you&#039;re set up and can test:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Regenerate your HTML files (or restart the web server to read from a different directory)&lt;/li&gt;
+&lt;li&gt;Generate test images and compare them (&lt;code&gt;npx backstop test&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In my case, I have been reimplementing my static site generator and I want to ensure the output is roughly the same. I had been using &lt;code&gt;diff -r&lt;/code&gt;, but I don&#039;t actually care about line-by-line, character-by-character differences, e.g. &lt;code&gt;&amp;amp;apos;&lt;/code&gt; and &lt;code&gt;&amp;amp;#39;&lt;/code&gt; are visually the same. I&#039;m also reimplementing syntax highlighting and expect those to be slightly different. Hence, I&#039;m using the tools above.&lt;/p&gt;
+</content>
+</entry>
 <entry>
 <title>Use &quot;:read !&quot; to insert the result of a shell command in Vim</title>
 <id>https://jaredkrinke.github.io/til/vim-read-shell-cmd.html</id>
@@ -69,23 +93,6 @@ GIT_AUTHOR_NAME=&amp;quot;$NAME&amp;quot; GIT_COMMITTER_NAME=&amp;quot;$NAME&amp
 &lt;p&gt;the length of a shortest computer program (in a predetermined programming language) that produces the object as output&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;I don&#039;t really have any particular reason to use this concept, but I like the idea that there &lt;em&gt;is&lt;/em&gt; a shortest computer program for outputting some result. Rather than write anymore here, I recommend reading the article linked above.&lt;/p&gt;
-</content>
-</entry>
-<entry>
-<title>Get the path of commands using &quot;realpath&quot; and &quot;which&quot;</title>
-<id>https://jaredkrinke.github.io/til/absolute-path-of-command.html</id>
-<link rel="alternate" href="https://jaredkrinke.github.io/til/absolute-path-of-command.html"/>
-<updated>2025-05-31T00:00:00.000Z</updated>
-<summary type="text">Get the path of commands using &quot;realpath&quot; and &quot;which&quot;</summary>
-<content type="html">&lt;p&gt;Sometimes you need to load resources that are relative to some tool. On POSIX (with a compatible shell), you can use:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;realpath $(which command)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;This finds the absolute path (including resolving links) to the command named &lt;code&gt;command&lt;/code&gt; which is on &lt;code&gt;PATH&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;And if you need to run a command in the directory of a tool:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;pushd $(dirname $(realpath $(which command)))
-command ...
-popd
-&lt;/code&gt;&lt;/pre&gt;
 </content>
 </entry>
 </feed>
