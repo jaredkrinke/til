@@ -1,6 +1,6 @@
 #!/bin/sh
 
-$(realpath $(which luasmith)) blog src docs
-$(realpath $(which luasmith)) readme.lua
+luasmith blog src docs
+luasmith readme.lua
 git status
 
