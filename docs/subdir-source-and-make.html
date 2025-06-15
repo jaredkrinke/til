@@ -24,10 +24,10 @@
 <p>This inconsistency is a problem for my current project that uses a polyglot Makefile that works on with both Makes.</p>
 <p>I'm trying to explore this space as little as possible, but my current solution is to use <code>VPATH</code> for GNU Make and <code>.PATH</code> for BSD Make -- these both support searching for source files in subdirectories (while placing object files in the root--i.e. the same directory as the Makefile). This is handy for e.g. when you're pulling in code via Git submodules, but you're compiling a single binary.</p>
 <p>Example:</p>
-<pre><code class="language-makefile"># Support both GNU Make and BSD Make
+<pre><code class="language-makefile"><span class="hl-comment"># Support both GNU Make and BSD Make</span>
 
-VPATH = .:lua:lpeg:md4c/src:chtml
-.PATH = ./ lua/ lpeg/ md4c/src/ chtml/
+<span class="hl-keyword">VPATH</span> <span class="hl-default">=</span> <span class="hl-identifier">.</span><span class="hl-operator">:</span><span class="hl-identifier">lua</span><span class="hl-operator">:</span><span class="hl-identifier">lpeg</span><span class="hl-operator">:</span><span class="hl-identifier">md4c/src</span><span class="hl-operator">:</span><span class="hl-identifier">chtml</span>
+<span class="hl-variable">.PATH</span> <span class="hl-operator">=</span> <span class="hl-identifier">./</span> <span class="hl-identifier">lua/</span> <span class="hl-identifier">lpeg/</span> <span class="hl-identifier">md4c/src/</span> <span class="hl-identifier">chtml/</span>
 </code></pre>
 
 

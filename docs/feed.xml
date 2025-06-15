@@ -59,10 +59,10 @@
 &lt;p&gt;This inconsistency is a problem for my current project that uses a polyglot Makefile that works on with both Makes.&lt;/p&gt;
 &lt;p&gt;I&#039;m trying to explore this space as little as possible, but my current solution is to use &lt;code&gt;VPATH&lt;/code&gt; for GNU Make and &lt;code&gt;.PATH&lt;/code&gt; for BSD Make -- these both support searching for source files in subdirectories (while placing object files in the root--i.e. the same directory as the Makefile). This is handy for e.g. when you&#039;re pulling in code via Git submodules, but you&#039;re compiling a single binary.&lt;/p&gt;
 &lt;p&gt;Example:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-makefile&quot;&gt;# Support both GNU Make and BSD Make
+&lt;pre&gt;&lt;code class=&quot;language-makefile&quot;&gt;&lt;span class=&quot;hl-comment&quot;&gt;# Support both GNU Make and BSD Make&lt;/span&gt;
 
-VPATH = .:lua:lpeg:md4c/src:chtml
-.PATH = ./ lua/ lpeg/ md4c/src/ chtml/
+&lt;span class=&quot;hl-keyword&quot;&gt;VPATH&lt;/span&gt; &lt;span class=&quot;hl-default&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;hl-identifier&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;hl-operator&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;hl-identifier&quot;&gt;lua&lt;/span&gt;&lt;span class=&quot;hl-operator&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;hl-identifier&quot;&gt;lpeg&lt;/span&gt;&lt;span class=&quot;hl-operator&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;hl-identifier&quot;&gt;md4c/src&lt;/span&gt;&lt;span class=&quot;hl-operator&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;hl-identifier&quot;&gt;chtml&lt;/span&gt;
+&lt;span class=&quot;hl-variable&quot;&gt;.PATH&lt;/span&gt; &lt;span class=&quot;hl-operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;hl-identifier&quot;&gt;./&lt;/span&gt; &lt;span class=&quot;hl-identifier&quot;&gt;lua/&lt;/span&gt; &lt;span class=&quot;hl-identifier&quot;&gt;lpeg/&lt;/span&gt; &lt;span class=&quot;hl-identifier&quot;&gt;md4c/src/&lt;/span&gt; &lt;span class=&quot;hl-identifier&quot;&gt;chtml/&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 </content>
 </entry>

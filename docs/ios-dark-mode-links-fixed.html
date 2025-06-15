@@ -18,7 +18,7 @@
 </header>
 <p>Despite seeing consistent praise for Apple's accessibility efforts, Safari on iOS always had a glaring issue: dark mode links were dark-blue-on-black when using their default styles (unlike every other browser that chose a reasonable contrast ratio).</p>
 <p>A few days ago, however, I noticed that this issue has finally been fixed! That means <strong>you can finally use dark mode <em>without explicitly specifying colors</em> and have it be legible for the large number of iPhone users out there</strong>. Here's how this site's dark mode is implemented:</p>
-<pre><code class="language-css">:root { color-scheme: light dark; }
+<pre><code class="language-css"><span class="hl-pseudoclass">:root</span> <span class="hl-operator">{</span> <span class="hl-identifier">color-scheme</span><span class="hl-operator">:</span> <span class="hl-identifier">light</span> <span class="hl-identifier">dark</span><span class="hl-operator">;</span> <span class="hl-operator">}</span>
 </code></pre>
 <p>That's all that's required, thanks to default styles!</p>
 
