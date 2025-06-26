@@ -7,8 +7,20 @@
 <author>
 <name>Today, I Learned</name>
 </author>
-<updated>2025-06-13T00:00:00.000Z</updated>
+<updated>2025-06-26T00:00:00.000Z</updated>
 
+<entry>
+<title>Use &quot;--transform&quot; to put files into subdirectory of a tarball</title>
+<id>https://jaredkrinke.github.io/til/tar-into-subdir.html</id>
+<link rel="alternate" href="https://jaredkrinke.github.io/til/tar-into-subdir.html"/>
+<updated>2025-06-26T00:00:00.000Z</updated>
+<summary type="text">Use &quot;--transform&quot; to put files into subdirectory of a tarball</summary>
+<content type="html">&lt;p&gt;When packaging software with dependencies on Linux (and probably POSIX), it&#039;s customary to put everything into a named, versioned subdirectory, e.g. so that &lt;code&gt;tar zxf foobar-0.1.tar.gz&lt;/code&gt; unpacks everything into its own directory, named &lt;code&gt;foobar-0.1/&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;An easy way to create such a tarball is:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;tar czf foobar-$1-linux-x86_64.tar.gz --transform &amp;quot;s,^,foobar-$1/,&amp;quot; &amp;lt;list of files and directories here&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+</entry>
 <entry>
 <title>Use BackstopJS to graphically compare HTML files</title>
 <id>https://jaredkrinke.github.io/til/graphically-compare-html-files.html</id>
@@ -80,19 +92,6 @@ DATE=&#039;2025-06-08T00:00:00Z&#039;
 
 GIT_AUTHOR_NAME=&amp;quot;$NAME&amp;quot; GIT_COMMITTER_NAME=&amp;quot;$NAME&amp;quot; GIT_AUTHOR_EMAIL=$EMAIL GIT_COMMITTER_EMAIL=$EMAIL GIT_AUTHOR_DATE=$DATE GIT_COMMITTER_DATE=$DATE git commit -m &#039;Excellent commit description&#039;
 &lt;/code&gt;&lt;/pre&gt;
-</content>
-</entry>
-<entry>
-<title>Kolmogorov Complexity</title>
-<id>https://jaredkrinke.github.io/til/kolmogorov-complexity.html</id>
-<link rel="alternate" href="https://jaredkrinke.github.io/til/kolmogorov-complexity.html"/>
-<updated>2025-06-06T00:00:00.000Z</updated>
-<summary type="text">Kolmogorov Complexity</summary>
-<content type="html">&lt;p&gt;While reading &lt;a href=&quot;https://ratfactor.com/cards/pl-small&quot;&gt;Small Programs and Languages&lt;/a&gt; on ratfactor.com, I came across &lt;strong&gt;Kolmogorov Complexity&lt;/strong&gt;, which someone described on Wikipedia as:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;the length of a shortest computer program (in a predetermined programming language) that produces the object as output&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;I don&#039;t really have any particular reason to use this concept, but I like the idea that there &lt;em&gt;is&lt;/em&gt; a shortest computer program for outputting some result. Rather than write anymore here, I recommend reading the article linked above.&lt;/p&gt;
 </content>
 </entry>
 </feed>

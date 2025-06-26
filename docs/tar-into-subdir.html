@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Use &quot;--transform&quot; to put files into subdirectory of a tarball</title>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<link rel="stylesheet" href="style.css" />
+<link rel="icon" href="data:," />
+
+</head>
+<body>
+<main>
+<header>
+<h1>Use &quot;--transform&quot; to put files into subdirectory of a tarball</h1>
+<p><time datetime="2025-06-26">June 26, 2025</time></p>
+</header>
+<p>When packaging software with dependencies on Linux (and probably POSIX), it's customary to put everything into a named, versioned subdirectory, e.g. so that <code>tar zxf foobar-0.1.tar.gz</code> unpacks everything into its own directory, named <code>foobar-0.1/</code>.</p>
+<p>An easy way to create such a tarball is:</p>
+<pre><code>tar czf foobar-$1-linux-x86_64.tar.gz --transform &quot;s,^,foobar-$1/,&quot; &lt;list of files and directories here&gt;
+</code></pre>
+
+
+</main>
+</body>
+</html>
