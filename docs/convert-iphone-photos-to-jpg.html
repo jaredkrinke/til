@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Use ImageMagick&#039;s &quot;mogrify&quot; tool for converting iPhone photos to JPEG</title>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<link rel="stylesheet" href="style.css" />
+<link rel="icon" href="data:," />
+
+</head>
+<body>
+<main>
+<header>
+<h1>Use ImageMagick&#039;s &quot;mogrify&quot; tool for converting iPhone photos to JPEG</h1>
+<p><time datetime="2025-06-27">June 27, 2025</time></p>
+</header>
+<p>To convert from iPhones' <code>.heic</code> format to <code>.jpg</code>, use:</p>
+<pre><code>mogrify -format jpg *.heic
+</code></pre>
+<p>At some point, iPhones started defaulting to some new format named HEIC that is very poorly supported by default on Windows (and possibly elsewhere). If you need to use these photos outside of Apple's ecosystem, you can convert them to the universally supported JPEG format using <a href="https://imagemagick.org/">ImageMagick</a>'s <code>mogrify</code> tool, as in the command line above.</p>
+
+
+</main>
+</body>
+</html>
