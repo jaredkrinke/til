@@ -1,6 +1,7 @@
 ---
 title: Use BackstopJS to graphically compare HTML files
 date: 2025-06-13
+keywords: [testing,web-development]
 ---
 If you've got a pile of static HTML files that you want to graphically compare:
 

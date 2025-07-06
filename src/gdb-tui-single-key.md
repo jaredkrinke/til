@@ -1,6 +1,7 @@
 ---
 title: GDB has a built-in TUI mode with single key operation
 date: 2025-05-27
+keywords: [gdb]
 ---
 **The GNU Debugger (GDB) has a built-in TUI mode** that can be accessed with the `tui` command or by passing `-tui` on the command line. It provides:
 

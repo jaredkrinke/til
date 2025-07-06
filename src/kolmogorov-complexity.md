@@ -1,6 +1,7 @@
 ---
 title: Kolmogorov Complexity
 date: 2025-06-06
+keywords: [theory]
 ---
 While reading [Small Programs and Languages](https://ratfactor.com/cards/pl-small) on ratfactor.com, I came across **Kolmogorov Complexity**, which someone described on Wikipedia as:
 

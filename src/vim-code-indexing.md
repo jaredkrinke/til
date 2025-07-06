@@ -1,6 +1,7 @@
 ---
 title: Use "exuberant-ctags" for "go to definition" in Vim
 date: 2025-05-28
+keywords: [c,vim]
 ---
 I re-learned today that **you can get "jump to definition" in Vim using `exuberant-ctags`**:
 

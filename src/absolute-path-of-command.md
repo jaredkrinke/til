@@ -1,6 +1,7 @@
 ---
 title: Get the path of commands using "realpath" and "which"
 date: 2025-05-31
+keywords: [unix]
 ---
 Sometimes you need to load resources that are relative to some tool. On POSIX (with a compatible shell), you can use:
 

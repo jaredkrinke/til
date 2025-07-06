@@ -1,6 +1,7 @@
 ---
 title: Use ":terminal" in Vim for a better integrated terminal
 date: 2025-05-19
+keywords: [vim]
 ---
 **Vim has a fully integrated terminal that can be accessed via `:ter` (`:terminal`)** (run `:help :terminal` to learn about it):
 

@@ -1,6 +1,7 @@
 ---
 title: Use ImageMagick's "mogrify" tool for converting iPhone photos to JPEG
 date: 2025-06-27
+keywords: [apple]
 ---
 To convert from iPhones' `.heic` format to `.jpg`, use:
 

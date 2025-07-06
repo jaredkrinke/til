@@ -1,6 +1,7 @@
 ---
 title: Safari default styles finally support dark mode
 date: 2025-05-22
+keywords: [apple,css,web-development]
 ---
 Despite seeing consistent praise for Apple's accessibility efforts, Safari on iOS always had a glaring issue: dark mode links were dark-blue-on-black when using their default styles (unlike every other browser that chose a reasonable contrast ratio).
 

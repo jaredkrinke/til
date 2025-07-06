@@ -1,6 +1,7 @@
 ---
 title: Kill unresponsive SSH sessions with "Enter, ~, ."
 date: 2025-05-21
+keywords: [ssh]
 ---
 If an SSH session has gone unresponsive, you can terminate it with a special escape sequence:
 

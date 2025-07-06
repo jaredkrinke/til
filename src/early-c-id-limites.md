@@ -1,6 +1,7 @@
 ---
 title: Early C only used the first few characters of function names
 date: 2025-05-23
+keywords: [c]
 ---
 It turns out there's a reason that the C standard library has such cryptic names for its functions:
 

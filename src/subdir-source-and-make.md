@@ -1,6 +1,7 @@
 ---
 title: Use "VPATH" and ".PATH" for compiling subdirectory source files in Make
 date: 2025-06-11
+keywords: [c]
 ---
 GNU Make (`gmake` on BSDs) and BSD Make (`bmake` on Linux) handle source files in subdirectories differently:
 

@@ -1,6 +1,7 @@
 ---
 title: Automatically wrapping lines in Vim and Emacs
 date: 2025-05-17
+keywords: [emacs,vim]
 ---
 Despite using Vim for decades at this point, I only recently learned that **Vim can automatically wrap text onto multiple lines using `gq`** (followed by motion or preceded by selection).
 

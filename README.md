@@ -3,6 +3,7 @@ Here's a collection of things I've learned or found interesting:
 
 | Date | Title |
 |---|---|
+| 2025-07-06 | [Use "display: table" to render non-table HTML elements like tables](https://jaredkrinke.github.io/til/css-display-table.html) |
 | 2025-06-27 | [Use ImageMagick's "mogrify" tool for converting iPhone photos to JPEG](https://jaredkrinke.github.io/til/convert-iphone-photos-to-jpg.html) |
 | 2025-06-26 | [Use "--transform" to put files into subdirectory of a tarball](https://jaredkrinke.github.io/til/tar-into-subdir.html) |
 | 2025-06-13 | [Use BackstopJS to graphically compare HTML files](https://jaredkrinke.github.io/til/graphically-compare-html-files.html) |

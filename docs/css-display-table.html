@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Use &quot;display: table&quot; to render non-table HTML elements like tables</title>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<link rel="stylesheet" href="style.css" />
+<link rel="icon" href="data:," />
+
+</head>
+<body>
+<main>
+<header>
+<h1>Use &quot;display: table&quot; to render non-table HTML elements like tables</h1>
+<p><time datetime="2025-07-06">July 6, 2025</time></p>
+</header>
+<p>It's possible to cause non-<code>&lt;table&gt;</code> HTML elements to render like tables using the following (each line on a different element);</p>
+<pre><code class="language-css"><span class="hl-identifier">foo</span> <span class="hl-operator">{</span> <span class="hl-property">display</span><span class="hl-operator">:</span> <span class="hl-constant">table</span><span class="hl-operator">;</span> <span class="hl-operator">}</span>
+<span class="hl-identifier">bar</span> <span class="hl-operator">{</span> <span class="hl-property">display</span><span class="hl-operator">:</span> <span class="hl-constant">table-row</span><span class="hl-operator">;</span> <span class="hl-operator">}</span>
+<span class="hl-identifier">baz</span> <span class="hl-operator">{</span> <span class="hl-property">display</span><span class="hl-operator">:</span> <span class="hl-constant">table-cell</span><span class="hl-operator">;</span> <span class="hl-operator">}</span>
+</code></pre>
+<p>Why would you do this? Well, in my case, I wanted to have an unordered list (<code>&lt;ul&gt;</code> and its <code>&lt;li&gt;</code> children) to look appear as a table with two columns. I did this so that text-mode (or old) browsers (like lynx and w3m) would just displaya normal list, while still having nice formatting on modern browsers. The only issue I encountered is that Dillo appears to interpret &quot;unknown&quot; <code>display</code> values as no formatting at all--but that's not a big deal since Dillo users are probably used to disabling remote stylesheets anyway.</p>
+<p>In my case, the CSS looked like this (making all <code>&lt;time&gt;</code> elements the same width, without any automatic line-wrapping):</p>
+<pre><code class="language-css"><b class="hl-tag">ul</b><span class="hl-operator">.</span><span class="hl-identifier">posts</span> <span class="hl-operator">{</span> <span class="hl-property">padding-left</span><span class="hl-operator">:</span> <i class="hl-number">0em</i><span class="hl-operator">;</span> <span class="hl-property">list-style-type</span><span class="hl-operator">:</span> <span class="hl-constant">none</span><span class="hl-operator">;</span> <span class="hl-property">display</span><span class="hl-operator">:</span> <span class="hl-constant">table</span> <span class="hl-operator">}</span>
+<b class="hl-tag">ul</b><span class="hl-operator">.</span><span class="hl-identifier">posts</span> <b class="hl-tag">li</b> <span class="hl-operator">{</span> <span class="hl-property">display</span><span class="hl-operator">:</span> <span class="hl-constant">table-row</span><span class="hl-operator">;</span> <span class="hl-operator">}</span>
+<b class="hl-tag">ul</b><span class="hl-operator">.</span><span class="hl-identifier">posts</span> <span class="hl-identifier">li</span> <b class="hl-tag">time</b> <span class="hl-operator">{</span> <span class="hl-property">padding-right</span><span class="hl-operator">:</span> <i class="hl-number">1em</i><span class="hl-operator">;</span> <span class="hl-property">white-space</span><span class="hl-operator">:</span> <span class="hl-identifier">nowrap</span><span class="hl-operator">;</span> <span class="hl-operator">}</span>
+<b class="hl-tag">ul</b><span class="hl-operator">.</span><span class="hl-identifier">posts</span> <span class="hl-identifier">li</span> <b class="hl-tag">time</b><span class="hl-operator">,</span> <b class="hl-tag">ul</b><span class="hl-operator">.</span><span class="hl-identifier">posts</span> <span class="hl-identifier">li</span> <b class="hl-tag">a</b> <span class="hl-operator">{</span> <span class="hl-property">display</span><span class="hl-operator">:</span> <span class="hl-constant">table-cell</span><span class="hl-operator">;</span> <span class="hl-property">padding-bottom</span><span class="hl-operator">:</span> <i class="hl-number">0.5em</i><span class="hl-operator">;</span> <span class="hl-operator">}</span>
+</code></pre>
+
+<footer>
+<p>&crarr; <a href="index.html">Back</a>
+</footer>
+
+</main>
+</body>
+</html>

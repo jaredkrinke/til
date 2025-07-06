@@ -1,6 +1,7 @@
 ---
 title: Difference between Vim's tabstop, softtabstop, and shiftwidth
 date: 2025-05-25
+keywords: [vim]
 ---
 In the past, I only knew about Vim's `tabstop` setting, but it no longer appears to be sufficient; there are 3 settings you need to understand:
 

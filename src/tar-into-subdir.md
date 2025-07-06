@@ -1,6 +1,7 @@
 ---
 title: Use "--transform" to put files into subdirectory of a tarball
 date: 2025-06-26
+keywords: [unix]
 ---
 When packaging software with dependencies on Linux (and probably POSIX), it's customary to put everything into a named, versioned subdirectory, e.g. so that `tar zxf foobar-0.1.tar.gz` unpacks everything into its own directory, named `foobar-0.1/`.
 

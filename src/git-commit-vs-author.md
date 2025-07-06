@@ -1,6 +1,7 @@
 ---
 title: Git commits have both an author and a committer
 date: 2025-06-08
+keywords: [git]
 ---
 Commits in Git have both an **author** and a **committer**. The distinction makes sense, although it probably doesn't matter in the vast majority of cases.
 

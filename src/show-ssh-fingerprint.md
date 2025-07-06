@@ -1,6 +1,7 @@
 ---
 title: Use "ssh-keygen -lf" to view SSH server fingerprint before connecting
 date: 2025-05-20
+keywords: [ssh]
 ---
 When you connect to a server the first time using Secure Shell (SSH), you are shown the server's public key fingerprint. How do you verify that fingerprint?
 

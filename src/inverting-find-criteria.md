@@ -1,6 +1,7 @@
 ---
 title: Use "!" to invert criteria in the "find" command
 date: 2025-05-18
+keywords: [unix]
 ---
 Sometimes, when using the POSIX `find` command (e.g. `find . -name '*.c'`), **I want to filter out a few files**. This can be done using the `!` operator, which applies to critera that follow it.
 
