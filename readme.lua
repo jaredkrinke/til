@@ -20,7 +20,7 @@ for k, v in pairs(grouped) do table.insert(groups, { key = k, items = v }) end
 for _, group in ipairs(table.sortBy(groups, "key")) do
 -%>
 
-## <%- group.key %>
+## #<%- group.key %>
 <% for _, item in ipairs(group.items) do -%>
 * [<%- item.title %>](<%- site.url %><%- string.gsub(item.path, "%.md$", ".html") %>)
 <% end -%>
