@@ -4,6 +4,7 @@ Here's a collection of things I've learned or found interesting:
 # Recent posts
 | Date | Title |
 |---|---|
+| 2025-07-08 | [Use "color-mix()" for computing colors in CSS](https://jaredkrinke.github.io/til/css-color-mixing.md.html) |
 | 2025-07-06 | [Use "display: table" to render non-table HTML elements like tables](https://jaredkrinke.github.io/til/css-display-table.html) |
 | 2025-06-27 | [Use ImageMagick's "mogrify" tool for converting iPhone photos to JPEG](https://jaredkrinke.github.io/til/convert-iphone-photos-to-jpg.html) |
 | 2025-06-26 | [Use "--transform" to put files into subdirectory of a tarball](https://jaredkrinke.github.io/til/tar-into-subdir.html) |
@@ -11,7 +12,6 @@ Here's a collection of things I've learned or found interesting:
 | 2025-06-12 | [Use ":read !" to insert the result of a shell command in Vim](https://jaredkrinke.github.io/til/vim-read-shell-cmd.html) |
 | 2025-06-11 | [Use "VPATH" and ".PATH" for compiling subdirectory source files in Make](https://jaredkrinke.github.io/til/subdir-source-and-make.html) |
 | 2025-06-08 | [Git commits have both an author and a committer](https://jaredkrinke.github.io/til/git-commit-vs-author.html) |
-| 2025-06-06 | [Kolmogorov Complexity](https://jaredkrinke.github.io/til/kolmogorov-complexity.html) |
 
 # All posts, by category
 

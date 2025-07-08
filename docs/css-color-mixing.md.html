@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Use &quot;color-mix()&quot; for computing colors in CSS</title>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<link rel="stylesheet" href="style.css" />
+<link rel="icon" href="data:," />
+
+</head>
+<body>
+<main>
+<header>
+<h1>Use &quot;color-mix()&quot; for computing colors in CSS</h1>
+<p><time datetime="2025-07-08">July 8, 2025</time></p>
+</header>
+<p>Recently, CSS gained the ability to compute colors using <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix"><code>color-mix()</code></a>.</p>
+<p>I try to keep my CSS simple, but there's one scenario where I need to compute colors: <strong>creating light vs. dark mode-agnostic themes</strong>. For example: this site. One trouble is that CSS doesn't expose the browser's default styles/colors, so previously I was stuck with essentially two colors: white and black. But now I'm able to generate shades of gray that work in both light and dark mode:</p>
+<pre><code class="language-css"><i class="hl-comment">/* Enable both light and dark modes */</i>
+<span class="hl-pseudoclass">:root</span> <span class="hl-operator">{</span> <span class="hl-identifier">color-scheme</span><span class="hl-operator">:</span> <span class="hl-identifier">light</span> <span class="hl-identifier">dark</span><span class="hl-operator">;</span> <span class="hl-operator">}</span>
+
+<i class="hl-comment">/* Add a faint background to code blocks */</i>
+<b class="hl-tag">pre</b><span class="hl-operator">,</span> <b class="hl-tag">code</b><span class="hl-pseudoclass">:not</span><span class="hl-operator">(</span><span class="hl-constant">pre</span> <span class="hl-constant">code</span><span class="hl-operator">)</span> <span class="hl-operator">{</span>
+  <span class="hl-property">background</span><span class="hl-operator">:</span> <span class="hl-identifier">color-mix</span><span class="hl-operator">(</span><span class="hl-identifier">in</span> <span class="hl-identifier">srgb</span><span class="hl-operator">,</span> <span class="hl-identifier">currentColor</span> <i class="hl-number">12%</i><span class="hl-operator">,</span> <span class="hl-constant">transparent</span><span class="hl-operator">)</span><span class="hl-operator">;</span>
+  <span class="hl-property">border-radius</span><span class="hl-operator">:</span> <i class="hl-number">0.5em</i><span class="hl-operator">;</span>
+<span class="hl-operator">}</span>
+</code></pre>
+<p>The first line means that the site supports both light and dark mode. The other lines mean that code blocks have a background that is generated from <code>currentColor</code> (i.e. the color of text--dark for light mode and light for dark mode). This yields a subtle but noticeable shade of gray that works nicely regardless of dark mode. Open F12 dev tools and toggle light/dark mode and behold the result!</p>
+
+<footer>
+<p>&crarr; <a href="index.html">Back</a>
+</footer>
+
+</main>
+</body>
+</html>

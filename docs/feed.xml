@@ -7,8 +7,28 @@
 <author>
 <name>Today, I Learned</name>
 </author>
-<updated>2025-07-06T00:00:00.000Z</updated>
+<updated>2025-07-08T00:00:00.000Z</updated>
 
+<entry>
+<title>Use &quot;color-mix()&quot; for computing colors in CSS</title>
+<id>https://jaredkrinke.github.io/til/css-color-mixing.md.html</id>
+<link rel="alternate" href="https://jaredkrinke.github.io/til/css-color-mixing.md.html"/>
+<updated>2025-07-08T00:00:00.000Z</updated>
+<summary type="text">Use &quot;color-mix()&quot; for computing colors in CSS</summary>
+<content type="html">&lt;p&gt;Recently, CSS gained the ability to compute colors using &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix&quot;&gt;&lt;code&gt;color-mix()&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I try to keep my CSS simple, but there&#039;s one scenario where I need to compute colors: &lt;strong&gt;creating light vs. dark mode-agnostic themes&lt;/strong&gt;. For example: this site. One trouble is that CSS doesn&#039;t expose the browser&#039;s default styles/colors, so previously I was stuck with essentially two colors: white and black. But now I&#039;m able to generate shades of gray that work in both light and dark mode:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;i class=&quot;hl-comment&quot;&gt;/* Enable both light and dark modes */&lt;/i&gt;
+&lt;span class=&quot;hl-pseudoclass&quot;&gt;:root&lt;/span&gt; &lt;span class=&quot;hl-operator&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;hl-identifier&quot;&gt;color-scheme&lt;/span&gt;&lt;span class=&quot;hl-operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;hl-identifier&quot;&gt;light&lt;/span&gt; &lt;span class=&quot;hl-identifier&quot;&gt;dark&lt;/span&gt;&lt;span class=&quot;hl-operator&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;hl-operator&quot;&gt;}&lt;/span&gt;
+
+&lt;i class=&quot;hl-comment&quot;&gt;/* Add a faint background to code blocks */&lt;/i&gt;
+&lt;b class=&quot;hl-tag&quot;&gt;pre&lt;/b&gt;&lt;span class=&quot;hl-operator&quot;&gt;,&lt;/span&gt; &lt;b class=&quot;hl-tag&quot;&gt;code&lt;/b&gt;&lt;span class=&quot;hl-pseudoclass&quot;&gt;:not&lt;/span&gt;&lt;span class=&quot;hl-operator&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;hl-constant&quot;&gt;pre&lt;/span&gt; &lt;span class=&quot;hl-constant&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;hl-operator&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;hl-operator&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;hl-property&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;hl-operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;hl-identifier&quot;&gt;color-mix&lt;/span&gt;&lt;span class=&quot;hl-operator&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;hl-identifier&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;hl-identifier&quot;&gt;srgb&lt;/span&gt;&lt;span class=&quot;hl-operator&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;hl-identifier&quot;&gt;currentColor&lt;/span&gt; &lt;i class=&quot;hl-number&quot;&gt;12%&lt;/i&gt;&lt;span class=&quot;hl-operator&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;hl-constant&quot;&gt;transparent&lt;/span&gt;&lt;span class=&quot;hl-operator&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;hl-operator&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;hl-property&quot;&gt;border-radius&lt;/span&gt;&lt;span class=&quot;hl-operator&quot;&gt;:&lt;/span&gt; &lt;i class=&quot;hl-number&quot;&gt;0.5em&lt;/i&gt;&lt;span class=&quot;hl-operator&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;hl-operator&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The first line means that the site supports both light and dark mode. The other lines mean that code blocks have a background that is generated from &lt;code&gt;currentColor&lt;/code&gt; (i.e. the color of text--dark for light mode and light for dark mode). This yields a subtle but noticeable shade of gray that works nicely regardless of dark mode. Open F12 dev tools and toggle light/dark mode and behold the result!&lt;/p&gt;
+</content>
+</entry>
 <entry>
 <title>Use &quot;display: table&quot; to render non-table HTML elements like tables</title>
 <id>https://jaredkrinke.github.io/til/css-display-table.html</id>
@@ -75,18 +95,6 @@
 &lt;li&gt;Generate test images and compare them (&lt;code&gt;npx backstop test&lt;/code&gt;)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;In my case, I have been reimplementing my static site generator and I want to ensure the output is roughly the same. I had been using &lt;code&gt;diff -r&lt;/code&gt;, but I don&#039;t actually care about line-by-line, character-by-character differences, e.g. &lt;code&gt;&amp;amp;apos;&lt;/code&gt; and &lt;code&gt;&amp;amp;#39;&lt;/code&gt; are visually the same. I&#039;m also reimplementing syntax highlighting and expect those to be slightly different. Hence, I&#039;m using the tools above.&lt;/p&gt;
-</content>
-</entry>
-<entry>
-<title>Use &quot;:read !&quot; to insert the result of a shell command in Vim</title>
-<id>https://jaredkrinke.github.io/til/vim-read-shell-cmd.html</id>
-<link rel="alternate" href="https://jaredkrinke.github.io/til/vim-read-shell-cmd.html"/>
-<updated>2025-06-12T00:00:00.000Z</updated>
-<summary type="text">Use &quot;:read !&quot; to insert the result of a shell command in Vim</summary>
-<content type="html">&lt;p&gt;Sometimes, I need to insert a list of files into a text file I&#039;m editing in Vim. Here&#039;s how to do it:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;:read !ls *.md
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Any command can follow the &lt;code&gt;!&lt;/code&gt;.&lt;/p&gt;
 </content>
 </entry>
 </feed>
