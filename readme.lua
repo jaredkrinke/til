@@ -30,6 +30,7 @@ for _, group in ipairs(table.sortBy(groups, "key")) do
 return {
 	readFromSource("src"),
 	extractFrontmatter("%.md$"),
+	deriveMetadata({ keywords = function (item) return item.keywords or { "misc" } end }),
 	aggregate("README.md", "%.md$"),
 	applyTemplates({ { "README.md", readme } }),
 	writeToDestination(".", "README.md"),
