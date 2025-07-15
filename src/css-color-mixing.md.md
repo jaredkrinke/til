@@ -1,6 +1,7 @@
 ---
 title: Use "color-mix()" for computing colors in CSS
 date: 2025-07-08
+keywords: [css]
 ---
 Recently, CSS gained the ability to compute colors using [`color-mix()`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix).
 

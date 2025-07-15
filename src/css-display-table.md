@@ -1,6 +1,7 @@
 ---
 title: Use "display: table" to render non-table HTML elements like tables
 date: 2025-07-06
+keywords: [css]
 ---
 It's possible to cause non-`<table>` HTML elements to render like tables using the following (each line on a different element);
 

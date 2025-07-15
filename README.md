@@ -26,6 +26,8 @@ Here's a collection of things I've learned or found interesting:
 
 ## #css
 * [Safari default styles finally support dark mode](https://jaredkrinke.github.io/til/ios-dark-mode-links-fixed.html)
+* [Use "color-mix()" for computing colors in CSS](https://jaredkrinke.github.io/til/css-color-mixing.md.html)
+* [Use "display: table" to render non-table HTML elements like tables](https://jaredkrinke.github.io/til/css-display-table.html)
 
 ## #emacs
 * [Automatically wrapping lines in Vim and Emacs](https://jaredkrinke.github.io/til/wrap-lines-vim-emacs.html)
@@ -35,6 +37,9 @@ Here's a collection of things I've learned or found interesting:
 
 ## #git
 * [Git commits have both an author and a committer](https://jaredkrinke.github.io/til/git-commit-vs-author.html)
+
+## #misc
+* [FidoNet was a network of bulletin board systems](https://jaredkrinke.github.io/til/fidonet.html)
 
 ## #ssh
 * [Use "ssh-keygen -lf" to view SSH server fingerprint before connecting](https://jaredkrinke.github.io/til/show-ssh-fingerprint.html)
