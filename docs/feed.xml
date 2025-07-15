@@ -7,8 +7,17 @@
 <author>
 <name>Today, I Learned</name>
 </author>
-<updated>2025-07-08T00:00:00.000Z</updated>
+<updated>2025-07-14T00:00:00.000Z</updated>
 
+<entry>
+<title>FidoNet was a network of bulletin board systems</title>
+<id>https://jaredkrinke.github.io/til/fidonet.html</id>
+<link rel="alternate" href="https://jaredkrinke.github.io/til/fidonet.html"/>
+<updated>2025-07-14T00:00:00.000Z</updated>
+<summary type="text">FidoNet was a network of bulletin board systems</summary>
+<content type="html">&lt;p&gt;Despite being old enough to remember dialing into a &lt;a href=&quot;https://en.wikipedia.org/wiki/Bulletin_board_system&quot;&gt;bulletin board system&lt;/a&gt; (BBS), I never knew until recently (while watching &lt;a href=&quot;http://www.bbsdocumentary.com/&quot;&gt;BBS: The Documentary&lt;/a&gt;) that &lt;strong&gt;BBSes were eventually networked together, mainly under a scheme called &lt;a href=&quot;https://en.wikipedia.org/wiki/FidoNet&quot;&gt;FidoNet&lt;/a&gt;&lt;/strong&gt;. It&#039;s hard to imagine that globe-spanning email and forums existed for the general public prior to the Internet. Apparently FidoNet persists even to this day!&lt;/p&gt;
+</content>
+</entry>
 <entry>
 <title>Use &quot;color-mix()&quot; for computing colors in CSS</title>
 <id>https://jaredkrinke.github.io/til/css-color-mixing.md.html</id>
@@ -71,30 +80,6 @@
 &lt;p&gt;An easy way to create such a tarball is:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;tar czf foobar-$1-linux-x86_64.tar.gz --transform &amp;quot;s,^,foobar-$1/,&amp;quot; &amp;lt;list of files and directories here&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
-</content>
-</entry>
-<entry>
-<title>Use BackstopJS to graphically compare HTML files</title>
-<id>https://jaredkrinke.github.io/til/graphically-compare-html-files.html</id>
-<link rel="alternate" href="https://jaredkrinke.github.io/til/graphically-compare-html-files.html"/>
-<updated>2025-06-13T00:00:00.000Z</updated>
-<summary type="text">Use BackstopJS to graphically compare HTML files</summary>
-<content type="html">&lt;p&gt;If you&#039;ve got a pile of static HTML files that you want to graphically compare:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Install &lt;a href=&quot;https://github.com/garris/BackstopJS&quot;&gt;BackstopJS&lt;/a&gt; (&lt;code&gt;npm install backstopjs&lt;/code&gt;)&lt;/li&gt;
-&lt;li&gt;Install &lt;a href=&quot;https://github.com/fffunction/backstop-crawl&quot;&gt;backstop-crawl&lt;/a&gt; (&lt;code&gt;npm install backstop-crawl&lt;/code&gt;)&lt;/li&gt;
-&lt;li&gt;Serve your HTML using Python (&lt;code&gt;python -m http.server -b 127.0.0.1 8888&lt;/code&gt;)&lt;/li&gt;
-&lt;li&gt;Crawl the site to generate a Backstop config (&lt;code&gt;npx backstop-crawl http://127.0.0.1:8888/&lt;/code&gt;)&lt;/li&gt;
-&lt;li&gt;Modify the &lt;code&gt;engine&lt;/code&gt; field in the generated config to be &lt;code&gt;puppet&lt;/code&gt; instead of &lt;code&gt;phantomjs&lt;/code&gt; (PhantomJS is no longer supported)&lt;/li&gt;
-&lt;li&gt;Generate images (&lt;code&gt;npx backstop test&lt;/code&gt;)&lt;/li&gt;
-&lt;li&gt;Set generated images as a baseline (&lt;code&gt;npx backstop approve&lt;/code&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Now, finally, you&#039;re set up and can test:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Regenerate your HTML files (or restart the web server to read from a different directory)&lt;/li&gt;
-&lt;li&gt;Generate test images and compare them (&lt;code&gt;npx backstop test&lt;/code&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;In my case, I have been reimplementing my static site generator and I want to ensure the output is roughly the same. I had been using &lt;code&gt;diff -r&lt;/code&gt;, but I don&#039;t actually care about line-by-line, character-by-character differences, e.g. &lt;code&gt;&amp;amp;apos;&lt;/code&gt; and &lt;code&gt;&amp;amp;#39;&lt;/code&gt; are visually the same. I&#039;m also reimplementing syntax highlighting and expect those to be slightly different. Hence, I&#039;m using the tools above.&lt;/p&gt;
 </content>
 </entry>
 </feed>
