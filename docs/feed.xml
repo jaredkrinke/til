@@ -7,8 +7,19 @@
 <author>
 <name>Today, I Learned</name>
 </author>
-<updated>2025-07-14T00:00:00.000Z</updated>
+<updated>2025-08-22T00:00:00.000Z</updated>
 
+<entry>
+<title>retro-aim-server lets you use AOL Instant Messenger, ICQ, etc.</title>
+<id>https://jaredkrinke.github.io/til/aol-instant-messenger.html</id>
+<link rel="alternate" href="https://jaredkrinke.github.io/til/aol-instant-messenger.html"/>
+<updated>2025-08-22T00:00:00.000Z</updated>
+<summary type="text">retro-aim-server lets you use AOL Instant Messenger, ICQ, etc.</summary>
+<content type="html">&lt;p&gt;One vintage computing goal I had was to be able to use AOL Instant Messenger on vintage computers.&lt;/p&gt;
+&lt;p&gt;Fortunately, someone has implemented AIM&#039;s (and ICQ&#039;s) server in a single portable Go binary: &lt;a href=&quot;https://github.com/mk6i/retro-aim-server&quot;&gt;retro-aim-server&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Note: Legacy AIM is unencrypted and vintage computers shouldn&#039;t be directly connected to the Internet, so if you&#039;ll only want to set this up on a virtual private network, e.g. using &lt;a href=&quot;https://www.wireguard.com/&quot;&gt;WireGuard&lt;/a&gt;.&lt;/p&gt;
+</content>
+</entry>
 <entry>
 <title>FidoNet was a network of bulletin board systems</title>
 <id>https://jaredkrinke.github.io/til/fidonet.html</id>
@@ -68,18 +79,6 @@
 &lt;pre&gt;&lt;code&gt;mogrify -format jpg *.heic
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;At some point, iPhones started defaulting to some new format named HEIC that is very poorly supported by default on Windows (and possibly elsewhere). If you need to use these photos outside of Apple&#039;s ecosystem, you can convert them to the universally supported JPEG format using &lt;a href=&quot;https://imagemagick.org/&quot;&gt;ImageMagick&lt;/a&gt;&#039;s &lt;code&gt;mogrify&lt;/code&gt; tool, as in the command line above.&lt;/p&gt;
-</content>
-</entry>
-<entry>
-<title>Use &quot;--transform&quot; to put files into subdirectory of a tarball</title>
-<id>https://jaredkrinke.github.io/til/tar-into-subdir.html</id>
-<link rel="alternate" href="https://jaredkrinke.github.io/til/tar-into-subdir.html"/>
-<updated>2025-06-26T00:00:00.000Z</updated>
-<summary type="text">Use &quot;--transform&quot; to put files into subdirectory of a tarball</summary>
-<content type="html">&lt;p&gt;When packaging software with dependencies on Linux (and probably POSIX), it&#039;s customary to put everything into a named, versioned subdirectory, e.g. so that &lt;code&gt;tar zxf foobar-0.1.tar.gz&lt;/code&gt; unpacks everything into its own directory, named &lt;code&gt;foobar-0.1/&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;An easy way to create such a tarball is:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;tar czf foobar-$1-linux-x86_64.tar.gz --transform &amp;quot;s,^,foobar-$1/,&amp;quot; &amp;lt;list of files and directories here&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
 </content>
 </entry>
 </feed>

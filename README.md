@@ -4,6 +4,7 @@ Here's a collection of things I've learned or found interesting:
 # Recent posts
 | Date | Title |
 |---|---|
+| 2025-08-22 | [retro-aim-server lets you use AOL Instant Messenger, ICQ, etc.](https://jaredkrinke.github.io/til/aol-instant-messenger.html) |
 | 2025-07-14 | [FidoNet was a network of bulletin board systems](https://jaredkrinke.github.io/til/fidonet.html) |
 | 2025-07-08 | [Use "color-mix()" for computing colors in CSS](https://jaredkrinke.github.io/til/css-color-mixing.md.html) |
 | 2025-07-06 | [Use "display: table" to render non-table HTML elements like tables](https://jaredkrinke.github.io/til/css-display-table.html) |
@@ -11,7 +12,6 @@ Here's a collection of things I've learned or found interesting:
 | 2025-06-26 | [Use "--transform" to put files into subdirectory of a tarball](https://jaredkrinke.github.io/til/tar-into-subdir.html) |
 | 2025-06-13 | [Use BackstopJS to graphically compare HTML files](https://jaredkrinke.github.io/til/graphically-compare-html-files.html) |
 | 2025-06-12 | [Use ":read !" to insert the result of a shell command in Vim](https://jaredkrinke.github.io/til/vim-read-shell-cmd.html) |
-| 2025-06-11 | [Use "VPATH" and ".PATH" for compiling subdirectory source files in Make](https://jaredkrinke.github.io/til/subdir-source-and-make.html) |
 
 # All posts, by category
 
@@ -40,6 +40,7 @@ Here's a collection of things I've learned or found interesting:
 
 ## #misc
 * [FidoNet was a network of bulletin board systems](https://jaredkrinke.github.io/til/fidonet.html)
+* [retro-aim-server lets you use AOL Instant Messenger, ICQ, etc.](https://jaredkrinke.github.io/til/aol-instant-messenger.html)
 
 ## #ssh
 * [Use "ssh-keygen -lf" to view SSH server fingerprint before connecting](https://jaredkrinke.github.io/til/show-ssh-fingerprint.html)
