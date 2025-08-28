@@ -7,8 +7,25 @@
 <author>
 <name>Today, I Learned</name>
 </author>
-<updated>2025-08-22T00:00:00.000Z</updated>
+<updated>2025-08-27T00:00:00.000Z</updated>
 
+<entry>
+<title>Use FTP&#039;s &quot;passive&quot; mode when behind NAT</title>
+<id>https://jaredkrinke.github.io/til/use-passive-ftp.html</id>
+<link rel="alternate" href="https://jaredkrinke.github.io/til/use-passive-ftp.html"/>
+<updated>2025-08-27T00:00:00.000Z</updated>
+<summary type="text">Use FTP&#039;s &quot;passive&quot; mode when behind NAT</summary>
+<content type="html">&lt;p&gt;FTP is an old, insecure protocol... but it&#039;s still useful on isolated networks of vintage computers.&lt;/p&gt;
+&lt;p&gt;To my surprise, by default, FTP clients open a connection to the server &lt;em&gt;and expect the server to open a connection back to them&lt;/em&gt;. This, obviously, doesn&#039;t work behind network address translation (NAT) routers.&lt;/p&gt;
+&lt;p&gt;The &amp;quot;solution&amp;quot; (scare quotes because I don&#039;t particluarly like requiring two separate ports) is FTP&#039;s passive mode, where the server tells the client a second port that the client should connect back on.&lt;/p&gt;
+&lt;p&gt;To configure passive mode in &lt;strong&gt;vsftpd&lt;/strong&gt; (&lt;code&gt;vsftpd.conf&lt;/code&gt;):&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-ini&quot;&gt;&lt;span class=&quot;hl-identifier&quot;&gt;pasv_enable&lt;/span&gt;&lt;span class=&quot;hl-operator&quot;&gt;=&lt;/span&gt;&lt;b class=&quot;hl-keyword&quot;&gt;yes&lt;/b&gt;
+&lt;span class=&quot;hl-identifier&quot;&gt;pasv_min_port&lt;/span&gt;&lt;span class=&quot;hl-operator&quot;&gt;=&lt;/span&gt;&lt;i class=&quot;hl-number&quot;&gt;2010&lt;/i&gt;
+&lt;span class=&quot;hl-identifier&quot;&gt;pasv_max_port&lt;/span&gt;&lt;span class=&quot;hl-operator&quot;&gt;=&lt;/span&gt;&lt;i class=&quot;hl-number&quot;&gt;2012&lt;/i&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You&#039;ll also need to configure some clients to use passive mode in the first place. Vintage Internet Explorer appears to use passive mode by default, for what it&#039;s worth.&lt;/p&gt;
+</content>
+</entry>
 <entry>
 <title>retro-aim-server lets you use AOL Instant Messenger, ICQ, etc.</title>
 <id>https://jaredkrinke.github.io/til/aol-instant-messenger.html</id>
@@ -67,18 +84,6 @@
 &lt;b class=&quot;hl-tag&quot;&gt;ul&lt;/b&gt;&lt;span class=&quot;hl-operator&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;hl-identifier&quot;&gt;posts&lt;/span&gt; &lt;span class=&quot;hl-identifier&quot;&gt;li&lt;/span&gt; &lt;b class=&quot;hl-tag&quot;&gt;time&lt;/b&gt; &lt;span class=&quot;hl-operator&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;hl-property&quot;&gt;padding-right&lt;/span&gt;&lt;span class=&quot;hl-operator&quot;&gt;:&lt;/span&gt; &lt;i class=&quot;hl-number&quot;&gt;1em&lt;/i&gt;&lt;span class=&quot;hl-operator&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;hl-property&quot;&gt;white-space&lt;/span&gt;&lt;span class=&quot;hl-operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;hl-identifier&quot;&gt;nowrap&lt;/span&gt;&lt;span class=&quot;hl-operator&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;hl-operator&quot;&gt;}&lt;/span&gt;
 &lt;b class=&quot;hl-tag&quot;&gt;ul&lt;/b&gt;&lt;span class=&quot;hl-operator&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;hl-identifier&quot;&gt;posts&lt;/span&gt; &lt;span class=&quot;hl-identifier&quot;&gt;li&lt;/span&gt; &lt;b class=&quot;hl-tag&quot;&gt;time&lt;/b&gt;&lt;span class=&quot;hl-operator&quot;&gt;,&lt;/span&gt; &lt;b class=&quot;hl-tag&quot;&gt;ul&lt;/b&gt;&lt;span class=&quot;hl-operator&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;hl-identifier&quot;&gt;posts&lt;/span&gt; &lt;span class=&quot;hl-identifier&quot;&gt;li&lt;/span&gt; &lt;b class=&quot;hl-tag&quot;&gt;a&lt;/b&gt; &lt;span class=&quot;hl-operator&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;hl-property&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;hl-operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;hl-constant&quot;&gt;table-cell&lt;/span&gt;&lt;span class=&quot;hl-operator&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;hl-property&quot;&gt;padding-bottom&lt;/span&gt;&lt;span class=&quot;hl-operator&quot;&gt;:&lt;/span&gt; &lt;i class=&quot;hl-number&quot;&gt;0.5em&lt;/i&gt;&lt;span class=&quot;hl-operator&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;hl-operator&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
-</content>
-</entry>
-<entry>
-<title>Use ImageMagick&#039;s &quot;mogrify&quot; tool for converting iPhone photos to JPEG</title>
-<id>https://jaredkrinke.github.io/til/convert-iphone-photos-to-jpg.html</id>
-<link rel="alternate" href="https://jaredkrinke.github.io/til/convert-iphone-photos-to-jpg.html"/>
-<updated>2025-06-27T00:00:00.000Z</updated>
-<summary type="text">Use ImageMagick&#039;s &quot;mogrify&quot; tool for converting iPhone photos to JPEG</summary>
-<content type="html">&lt;p&gt;To convert from iPhones&#039; &lt;code&gt;.heic&lt;/code&gt; format to &lt;code&gt;.jpg&lt;/code&gt;, use:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;mogrify -format jpg *.heic
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;At some point, iPhones started defaulting to some new format named HEIC that is very poorly supported by default on Windows (and possibly elsewhere). If you need to use these photos outside of Apple&#039;s ecosystem, you can convert them to the universally supported JPEG format using &lt;a href=&quot;https://imagemagick.org/&quot;&gt;ImageMagick&lt;/a&gt;&#039;s &lt;code&gt;mogrify&lt;/code&gt; tool, as in the command line above.&lt;/p&gt;
 </content>
 </entry>
 </feed>

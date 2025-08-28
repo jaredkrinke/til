@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Use FTP&#039;s &quot;passive&quot; mode when behind NAT</title>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<link rel="stylesheet" href="style.css" />
+<link rel="icon" href="data:," />
+
+</head>
+<body>
+<main>
+<header>
+<h1>Use FTP&#039;s &quot;passive&quot; mode when behind NAT</h1>
+<p><time datetime="2025-08-27">August 27, 2025</time></p>
+</header>
+<p>FTP is an old, insecure protocol... but it's still useful on isolated networks of vintage computers.</p>
+<p>To my surprise, by default, FTP clients open a connection to the server <em>and expect the server to open a connection back to them</em>. This, obviously, doesn't work behind network address translation (NAT) routers.</p>
+<p>The &quot;solution&quot; (scare quotes because I don't particluarly like requiring two separate ports) is FTP's passive mode, where the server tells the client a second port that the client should connect back on.</p>
+<p>To configure passive mode in <strong>vsftpd</strong> (<code>vsftpd.conf</code>):</p>
+<pre><code class="language-ini"><span class="hl-identifier">pasv_enable</span><span class="hl-operator">=</span><b class="hl-keyword">yes</b>
+<span class="hl-identifier">pasv_min_port</span><span class="hl-operator">=</span><i class="hl-number">2010</i>
+<span class="hl-identifier">pasv_max_port</span><span class="hl-operator">=</span><i class="hl-number">2012</i>
+</code></pre>
+<p>You'll also need to configure some clients to use passive mode in the first place. Vintage Internet Explorer appears to use passive mode by default, for what it's worth.</p>
+
+<footer>
+<p>&crarr; <a href="index.html">Back</a>
+</footer>
+
+</main>
+</body>
+</html>

@@ -4,6 +4,7 @@ Here's a collection of things I've learned or found interesting:
 # Recent posts
 | Date | Title |
 |---|---|
+| 2025-08-27 | [Use FTP's "passive" mode when behind NAT](https://jaredkrinke.github.io/til/use-passive-ftp.html) |
 | 2025-08-22 | [retro-aim-server lets you use AOL Instant Messenger, ICQ, etc.](https://jaredkrinke.github.io/til/aol-instant-messenger.html) |
 | 2025-07-14 | [FidoNet was a network of bulletin board systems](https://jaredkrinke.github.io/til/fidonet.html) |
 | 2025-07-08 | [Use "color-mix()" for computing colors in CSS](https://jaredkrinke.github.io/til/css-color-mixing.md.html) |
@@ -11,7 +12,6 @@ Here's a collection of things I've learned or found interesting:
 | 2025-06-27 | [Use ImageMagick's "mogrify" tool for converting iPhone photos to JPEG](https://jaredkrinke.github.io/til/convert-iphone-photos-to-jpg.html) |
 | 2025-06-26 | [Use "--transform" to put files into subdirectory of a tarball](https://jaredkrinke.github.io/til/tar-into-subdir.html) |
 | 2025-06-13 | [Use BackstopJS to graphically compare HTML files](https://jaredkrinke.github.io/til/graphically-compare-html-files.html) |
-| 2025-06-12 | [Use ":read !" to insert the result of a shell command in Vim](https://jaredkrinke.github.io/til/vim-read-shell-cmd.html) |
 
 # All posts, by category
 
@@ -40,6 +40,7 @@ Here's a collection of things I've learned or found interesting:
 
 ## #misc
 * [FidoNet was a network of bulletin board systems](https://jaredkrinke.github.io/til/fidonet.html)
+* [Use FTP's "passive" mode when behind NAT](https://jaredkrinke.github.io/til/use-passive-ftp.html)
 * [retro-aim-server lets you use AOL Instant Messenger, ICQ, etc.](https://jaredkrinke.github.io/til/aol-instant-messenger.html)
 
 ## #ssh
