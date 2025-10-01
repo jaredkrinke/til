@@ -7,8 +7,18 @@
 <author>
 <name>Today, I Learned</name>
 </author>
-<updated>2025-09-05T00:00:00.000Z</updated>
+<updated>2025-10-01T00:00:00.000Z</updated>
 
+<entry>
+<title>OpenSuperClone can clone failing rotational hard disks</title>
+<id>https://jaredkrinke.github.io/til/clone-failing-hdd.html</id>
+<link rel="alternate" href="https://jaredkrinke.github.io/til/clone-failing-hdd.html"/>
+<updated>2025-10-01T00:00:00.000Z</updated>
+<summary type="text">OpenSuperClone can clone failing rotational hard disks</summary>
+<content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/ISpillMyDrink/OpenSuperClone&quot;&gt;OpenSuperClone&lt;/a&gt; can cautiously clone failing rotational hard disks, similar to &lt;a href=&quot;https://www.gnu.org/software/ddrescue/&quot;&gt;ddrescue&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Once cloned, you can safely attempt reading from the clone and maybe even try repairing the file system or scanning for orphaned files.&lt;/p&gt;
+</content>
+</entry>
 <entry>
 <title>Use Shift+F10 to open a command prompt during Windows 11 setup</title>
 <id>https://jaredkrinke.github.io/til/command-prompt-in-win11-setup.html</id>
@@ -54,26 +64,6 @@
 <updated>2025-07-14T00:00:00.000Z</updated>
 <summary type="text">FidoNet was a network of bulletin board systems</summary>
 <content type="html">&lt;p&gt;Despite being old enough to remember dialing into a &lt;a href=&quot;https://en.wikipedia.org/wiki/Bulletin_board_system&quot;&gt;bulletin board system&lt;/a&gt; (BBS), I never knew until recently (while watching &lt;a href=&quot;http://www.bbsdocumentary.com/&quot;&gt;BBS: The Documentary&lt;/a&gt;) that &lt;strong&gt;BBSes were eventually networked together, mainly under a scheme called &lt;a href=&quot;https://en.wikipedia.org/wiki/FidoNet&quot;&gt;FidoNet&lt;/a&gt;&lt;/strong&gt;. It&#039;s hard to imagine that globe-spanning email and forums existed for the general public prior to the Internet. Apparently FidoNet persists even to this day!&lt;/p&gt;
-</content>
-</entry>
-<entry>
-<title>Use &quot;color-mix()&quot; for computing colors in CSS</title>
-<id>https://jaredkrinke.github.io/til/css-color-mixing.html</id>
-<link rel="alternate" href="https://jaredkrinke.github.io/til/css-color-mixing.html"/>
-<updated>2025-07-08T00:00:00.000Z</updated>
-<summary type="text">Use &quot;color-mix()&quot; for computing colors in CSS</summary>
-<content type="html">&lt;p&gt;Recently, CSS gained the ability to compute colors using &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix&quot;&gt;&lt;code&gt;color-mix()&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;I try to keep my CSS simple, but there&#039;s one scenario where I need to compute colors: &lt;strong&gt;creating light vs. dark mode-agnostic themes&lt;/strong&gt;. For example: this site. One trouble is that CSS doesn&#039;t expose the browser&#039;s default styles/colors, so previously I was stuck with essentially two colors: white and black. But now I&#039;m able to generate shades of gray that work in both light and dark mode:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;i class=&quot;hl-comment&quot;&gt;/* Enable both light and dark modes */&lt;/i&gt;
-&lt;span class=&quot;hl-pseudoclass&quot;&gt;:root&lt;/span&gt; &lt;span class=&quot;hl-operator&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;hl-identifier&quot;&gt;color-scheme&lt;/span&gt;&lt;span class=&quot;hl-operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;hl-identifier&quot;&gt;light&lt;/span&gt; &lt;span class=&quot;hl-identifier&quot;&gt;dark&lt;/span&gt;&lt;span class=&quot;hl-operator&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;hl-operator&quot;&gt;}&lt;/span&gt;
-
-&lt;i class=&quot;hl-comment&quot;&gt;/* Add a faint background to code blocks */&lt;/i&gt;
-&lt;b class=&quot;hl-tag&quot;&gt;pre&lt;/b&gt;&lt;span class=&quot;hl-operator&quot;&gt;,&lt;/span&gt; &lt;b class=&quot;hl-tag&quot;&gt;code&lt;/b&gt;&lt;span class=&quot;hl-pseudoclass&quot;&gt;:not&lt;/span&gt;&lt;span class=&quot;hl-operator&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;hl-constant&quot;&gt;pre&lt;/span&gt; &lt;span class=&quot;hl-constant&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;hl-operator&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;hl-operator&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;hl-property&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;hl-operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;hl-identifier&quot;&gt;color-mix&lt;/span&gt;&lt;span class=&quot;hl-operator&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;hl-identifier&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;hl-identifier&quot;&gt;srgb&lt;/span&gt;&lt;span class=&quot;hl-operator&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;hl-identifier&quot;&gt;currentColor&lt;/span&gt; &lt;i class=&quot;hl-number&quot;&gt;12%&lt;/i&gt;&lt;span class=&quot;hl-operator&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;hl-constant&quot;&gt;transparent&lt;/span&gt;&lt;span class=&quot;hl-operator&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;hl-operator&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;hl-property&quot;&gt;border-radius&lt;/span&gt;&lt;span class=&quot;hl-operator&quot;&gt;:&lt;/span&gt; &lt;i class=&quot;hl-number&quot;&gt;0.5em&lt;/i&gt;&lt;span class=&quot;hl-operator&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;hl-operator&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The first line means that the site supports both light and dark mode. The other lines mean that code blocks have a background that is generated from &lt;code&gt;currentColor&lt;/code&gt; (i.e. the color of text--dark for light mode and light for dark mode). This yields a subtle but noticeable shade of gray that works nicely regardless of dark mode. Open F12 dev tools and toggle light/dark mode and behold the result!&lt;/p&gt;
 </content>
 </entry>
 </feed>
