@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Use &quot;socat&quot; for temporarily forwarding ports</title>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<link rel="stylesheet" href="style.css" />
+<link rel="icon" href="data:," />
+
+</head>
+<body>
+<main>
+<header>
+<h1>Use &quot;socat&quot; for temporarily forwarding ports</h1>
+<p><time datetime="2025-10-29">October 29, 2025</time></p>
+</header>
+<p>Temporarily forward ports on Linux with the <code>socat</code> tool:</p>
+<pre><code class="language-txt">socat UDP4-LISTEN:12345,fork,reuseaddr,bind=127.0.0.1 UDP4:1.2.3.4:34567
+</code></pre>
+<p>This forwards UDP datagrams from 127.0.0.1 on port 12345 to a remote host 1.2.3.4, port 34567.  Use &quot;TCP&quot; instead of &quot;UDP&quot; to forward TCP streams.</p>
+<p>Notes:</p>
+<ul>
+<li><code>fork</code> means it will fork a new process for each remote host</li>
+<li>UDP is connectionless, so <code>socat</code> UDP forks won't automatically terminate unless a timeout is specified using <code>-T</code></li>
+<li><code>reuseaddr</code> might not be needed -- I haven't tested it in depth</li>
+</ul>
+
+<footer>
+<p>&crarr; <a href="index.html">Back</a>
+</footer>
+
+</main>
+</body>
+</html>

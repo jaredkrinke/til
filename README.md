@@ -4,6 +4,7 @@ Here's a collection of things I've learned or found interesting:
 # Recent posts
 | Date | Title |
 |---|---|
+| 2025-10-29 | [Use "socat" for temporarily forwarding ports](https://jaredkrinke.github.io/til/forward-ports-with-socat.html) |
 | 2025-10-01 | [OpenSuperClone can clone failing rotational hard disks](https://jaredkrinke.github.io/til/clone-failing-hdd.html) |
 | 2025-09-05 | [Use Shift+F10 to open a command prompt during Windows 11 setup](https://jaredkrinke.github.io/til/command-prompt-in-win11-setup.html) |
 | 2025-08-27 | [Use FTP's "passive" mode when behind NAT](https://jaredkrinke.github.io/til/use-passive-ftp.html) |
@@ -11,7 +12,6 @@ Here's a collection of things I've learned or found interesting:
 | 2025-07-14 | [FidoNet was a network of bulletin board systems](https://jaredkrinke.github.io/til/fidonet.html) |
 | 2025-07-08 | [Use "color-mix()" for computing colors in CSS](https://jaredkrinke.github.io/til/css-color-mixing.html) |
 | 2025-07-06 | [Use "display: table" to render non-table HTML elements like tables](https://jaredkrinke.github.io/til/css-display-table.html) |
-| 2025-06-27 | [Use ImageMagick's "mogrify" tool for converting iPhone photos to JPEG](https://jaredkrinke.github.io/til/convert-iphone-photos-to-jpg.html) |
 
 # All posts, by category
 
@@ -46,6 +46,7 @@ Here's a collection of things I've learned or found interesting:
 * [Use Shift+F10 to open a command prompt during Windows 11 setup](https://jaredkrinke.github.io/til/command-prompt-in-win11-setup.html)
 * [Use FTP's "passive" mode when behind NAT](https://jaredkrinke.github.io/til/use-passive-ftp.html)
 * [retro-aim-server lets you use AOL Instant Messenger, ICQ, etc.](https://jaredkrinke.github.io/til/aol-instant-messenger.html)
+* [Use "socat" for temporarily forwarding ports](https://jaredkrinke.github.io/til/forward-ports-with-socat.html)
 
 ## #ssh
 * [Use "ssh-keygen -lf" to view SSH server fingerprint before connecting](https://jaredkrinke.github.io/til/show-ssh-fingerprint.html)
