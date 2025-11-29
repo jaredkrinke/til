@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Use &quot;find -exec&quot; instead of &quot;xargs&quot;</title>
+
+<meta name="keywords" content="unix" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<link rel="stylesheet" href="style.css" />
+<link rel="icon" href="data:," />
+
+</head>
+<body>
+<main>
+<header>
+<h1>Use &quot;find -exec&quot; instead of &quot;xargs&quot;</h1>
+<p><time datetime="2025-11-30">November 30, 2025</time></p>
+</header>
+<p>If you need to run a command on each file under a directory structure, use the <code>-exec</code> option of <code>find</code> (it will substitute a file for each <code>{}</code>, and you must terminate with <code>\;</code>):</p>
+<pre><code>find some-dir -name '*.mp4' -exec ffmpeg -i {} out/{} \;
+</code></pre>
+<p><code>find ... -exec</code> is better than piping to <code>xargs</code> because it handles filenames with spaces seamlessly.</p>
+
+<footer>
+<a href="topics/unix.html">#unix</a>
+
+<p>&crarr; <a href="index.html">Back</a>
+</footer>
+
+</main>
+</body>
+</html>

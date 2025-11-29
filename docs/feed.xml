@@ -7,8 +7,44 @@
 <author>
 <name>Today, I Learned</name>
 </author>
-<updated>2025-11-29T00:00:00.000Z</updated>
+<updated>2025-12-01T00:00:00.000Z</updated>
 
+<entry>
+<title>FFmpeg can be used for batch lossless video cutting</title>
+<id>https://jaredkrinke.github.io/til/batch-lossless-cut-with-ffmpeg.html</id>
+<link rel="alternate" href="https://jaredkrinke.github.io/til/batch-lossless-cut-with-ffmpeg.html"/>
+<updated>2025-12-01T00:00:00.000Z</updated>
+<summary type="text">FFmpeg can be used for batch lossless video cutting</summary>
+<content type="html">&lt;p&gt;Sadly, not many video editing tools support lossless cutting -- and even fewer support batch processing.&lt;/p&gt;
+&lt;p&gt;Fortunately, FFmpeg supports lossless cutting using the &lt;code&gt;-ss hh:mm:ss&lt;/code&gt; option and, being a command line tool, it can be used for batch processing.&lt;/p&gt;
+&lt;p&gt;Here&#039;s an example (on POSIX) that cuts roughly the first 26 seconds off of each video in &lt;code&gt;Videos/&lt;/code&gt; (lossless and aligned to keyframes), putting the resulting videos into &lt;code&gt;out/&lt;/code&gt; (you can&#039;t edit in place losslessly):&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;find Videos -name &#039;*.mp4&#039; -exec ffmpeg -i {} -ss 26 -c copy out/{} \;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The &lt;code&gt;find&lt;/code&gt; command runs the &lt;code&gt;-exec ...&lt;/code&gt; command for each &lt;code&gt;*.mp4&lt;/code&gt; file, with &lt;code&gt;{}&lt;/code&gt; substituted for the filename (including any spaces--also note the &lt;code&gt;\;&lt;/code&gt; at the end), so the FFmpeg command line is similar to:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ffmpeg -i video.mp4 -ss 26 -c copy out/video.mp4
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Explanation:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-i video.mp4&lt;/code&gt;: Opens &lt;code&gt;video.mp4&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-ss 26&lt;/code&gt;: Only keeps the video starting near 26 seconds (next keyframe)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-c copy&lt;/code&gt;: Copies video/audio streams (i.e. losslessly cuts) -- this option is needed to avoid re-encoding!&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;out/video.mp4&lt;/code&gt;: Writes the output to &lt;code&gt;out/video.mp4&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Note: on Windows, you could use &lt;code&gt;for %i in (*.mp4) do ffmpeg -i %i ...&lt;/code&gt;.&lt;/p&gt;
+</content>
+</entry>
+<entry>
+<title>Use &quot;find -exec&quot; instead of &quot;xargs&quot;</title>
+<id>https://jaredkrinke.github.io/til/find-exec-instead-of-xargs.html</id>
+<link rel="alternate" href="https://jaredkrinke.github.io/til/find-exec-instead-of-xargs.html"/>
+<updated>2025-11-30T00:00:00.000Z</updated>
+<summary type="text">Use &quot;find -exec&quot; instead of &quot;xargs&quot;</summary>
+<content type="html">&lt;p&gt;If you need to run a command on each file under a directory structure, use the &lt;code&gt;-exec&lt;/code&gt; option of &lt;code&gt;find&lt;/code&gt; (it will substitute a file for each &lt;code&gt;{}&lt;/code&gt;, and you must terminate with &lt;code&gt;\;&lt;/code&gt;):&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;find some-dir -name &#039;*.mp4&#039; -exec ffmpeg -i {} out/{} \;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;find ... -exec&lt;/code&gt; is better than piping to &lt;code&gt;xargs&lt;/code&gt; because it handles filenames with spaces seamlessly.&lt;/p&gt;
+</content>
+</entry>
 <entry>
 <title>Use Ctrl+p, Ctrl+q to detach from containers</title>
 <id>https://jaredkrinke.github.io/til/detach-from-docker-container.html</id>
@@ -45,33 +81,6 @@
 <summary type="text">OpenSuperClone can clone failing rotational hard disks</summary>
 <content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/ISpillMyDrink/OpenSuperClone&quot;&gt;OpenSuperClone&lt;/a&gt; can cautiously clone failing rotational hard disks, similar to &lt;a href=&quot;https://www.gnu.org/software/ddrescue/&quot;&gt;ddrescue&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Once cloned, you can safely attempt reading from the clone and maybe even try repairing the file system or scanning for orphaned files.&lt;/p&gt;
-</content>
-</entry>
-<entry>
-<title>Use Shift+F10 to open a command prompt during Windows 11 setup</title>
-<id>https://jaredkrinke.github.io/til/command-prompt-in-win11-setup.html</id>
-<link rel="alternate" href="https://jaredkrinke.github.io/til/command-prompt-in-win11-setup.html"/>
-<updated>2025-09-05T00:00:00.000Z</updated>
-<summary type="text">Use Shift+F10 to open a command prompt during Windows 11 setup</summary>
-<content type="html">&lt;p&gt;Use &lt;strong&gt;Shift+F10&lt;/strong&gt; to open a command prompt while you&#039;re in the Windows 11 setup flow.&lt;/p&gt;
-&lt;p&gt;While clean-installing Windows 11 for someone, I wasn&#039;t able to sign into their Microsoft Account because no network drivers were present. In order to extract HP&#039;s network drivers, I needed to be able to run their self-extracting executables, thus I needed a command prompt.&lt;/p&gt;
-</content>
-</entry>
-<entry>
-<title>Use FTP&#039;s &quot;passive&quot; mode when behind NAT</title>
-<id>https://jaredkrinke.github.io/til/use-passive-ftp.html</id>
-<link rel="alternate" href="https://jaredkrinke.github.io/til/use-passive-ftp.html"/>
-<updated>2025-08-27T00:00:00.000Z</updated>
-<summary type="text">Use FTP&#039;s &quot;passive&quot; mode when behind NAT</summary>
-<content type="html">&lt;p&gt;FTP is an old, insecure protocol... but it&#039;s still useful on isolated networks of vintage computers.&lt;/p&gt;
-&lt;p&gt;To my surprise, by default, FTP clients open a connection to the server &lt;em&gt;and expect the server to open a connection back to them&lt;/em&gt;. This, obviously, doesn&#039;t work behind network address translation (NAT) routers.&lt;/p&gt;
-&lt;p&gt;The &amp;quot;solution&amp;quot; (scare quotes because I don&#039;t particluarly like requiring two separate ports) is FTP&#039;s passive mode, where the server tells the client a second port that the client should connect back on.&lt;/p&gt;
-&lt;p&gt;To configure passive mode in &lt;strong&gt;vsftpd&lt;/strong&gt; (&lt;code&gt;vsftpd.conf&lt;/code&gt;):&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-ini&quot;&gt;&lt;span class=&quot;hl-identifier&quot;&gt;pasv_enable&lt;/span&gt;&lt;span class=&quot;hl-operator&quot;&gt;=&lt;/span&gt;&lt;b class=&quot;hl-keyword&quot;&gt;yes&lt;/b&gt;
-&lt;span class=&quot;hl-identifier&quot;&gt;pasv_min_port&lt;/span&gt;&lt;span class=&quot;hl-operator&quot;&gt;=&lt;/span&gt;&lt;i class=&quot;hl-number&quot;&gt;2010&lt;/i&gt;
-&lt;span class=&quot;hl-identifier&quot;&gt;pasv_max_port&lt;/span&gt;&lt;span class=&quot;hl-operator&quot;&gt;=&lt;/span&gt;&lt;i class=&quot;hl-number&quot;&gt;2012&lt;/i&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;You&#039;ll also need to configure some clients to use passive mode in the first place. Vintage Internet Explorer appears to use passive mode by default, for what it&#039;s worth.&lt;/p&gt;
 </content>
 </entry>
 </feed>

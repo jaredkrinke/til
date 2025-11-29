@@ -4,14 +4,14 @@ Here's a collection of things I've learned or found interesting:
 # Recent posts
 | Date | Title |
 |---|---|
+| 2025-12-01 | [FFmpeg can be used for batch lossless video cutting](https://jaredkrinke.github.io/til/batch-lossless-cut-with-ffmpeg.html) |
+| 2025-11-30 | [Use "find -exec" instead of "xargs"](https://jaredkrinke.github.io/til/find-exec-instead-of-xargs.html) |
 | 2025-11-29 | [Use Ctrl+p, Ctrl+q to detach from containers](https://jaredkrinke.github.io/til/detach-from-docker-container.html) |
 | 2025-10-29 | [Use "socat" for temporarily forwarding ports](https://jaredkrinke.github.io/til/forward-ports-with-socat.html) |
 | 2025-10-01 | [OpenSuperClone can clone failing rotational hard disks](https://jaredkrinke.github.io/til/clone-failing-hdd.html) |
 | 2025-09-05 | [Use Shift+F10 to open a command prompt during Windows 11 setup](https://jaredkrinke.github.io/til/command-prompt-in-win11-setup.html) |
 | 2025-08-27 | [Use FTP's "passive" mode when behind NAT](https://jaredkrinke.github.io/til/use-passive-ftp.html) |
 | 2025-08-22 | [retro-aim-server lets you use AOL Instant Messenger, ICQ, etc.](https://jaredkrinke.github.io/til/aol-instant-messenger.html) |
-| 2025-07-14 | [FidoNet was a network of bulletin board systems](https://jaredkrinke.github.io/til/fidonet.html) |
-| 2025-07-08 | [Use "color-mix()" for computing colors in CSS](https://jaredkrinke.github.io/til/css-color-mixing.html) |
 
 # All posts, by category
 
@@ -45,6 +45,7 @@ Here's a collection of things I've learned or found interesting:
 * [FidoNet was a network of bulletin board systems](https://jaredkrinke.github.io/til/fidonet.html)
 * [Use Shift+F10 to open a command prompt during Windows 11 setup](https://jaredkrinke.github.io/til/command-prompt-in-win11-setup.html)
 * [Use FTP's "passive" mode when behind NAT](https://jaredkrinke.github.io/til/use-passive-ftp.html)
+* [FFmpeg can be used for batch lossless video cutting](https://jaredkrinke.github.io/til/batch-lossless-cut-with-ffmpeg.html)
 * [retro-aim-server lets you use AOL Instant Messenger, ICQ, etc.](https://jaredkrinke.github.io/til/aol-instant-messenger.html)
 * [Use "socat" for temporarily forwarding ports](https://jaredkrinke.github.io/til/forward-ports-with-socat.html)
 * [Use Ctrl+p, Ctrl+q to detach from containers](https://jaredkrinke.github.io/til/detach-from-docker-container.html)
@@ -62,6 +63,7 @@ Here's a collection of things I've learned or found interesting:
 ## #unix
 * [Get the path of commands using "realpath" and "which"](https://jaredkrinke.github.io/til/absolute-path-of-command.html)
 * [Use "--transform" to put files into subdirectory of a tarball](https://jaredkrinke.github.io/til/tar-into-subdir.html)
+* [Use "find -exec" instead of "xargs"](https://jaredkrinke.github.io/til/find-exec-instead-of-xargs.html)
 * [Use "!" to invert criteria in the "find" command](https://jaredkrinke.github.io/til/inverting-find-criteria.html)
 
 ## #vim

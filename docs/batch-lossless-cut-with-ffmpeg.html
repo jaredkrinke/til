@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>FFmpeg can be used for batch lossless video cutting</title>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<link rel="stylesheet" href="style.css" />
+<link rel="icon" href="data:," />
+
+</head>
+<body>
+<main>
+<header>
+<h1>FFmpeg can be used for batch lossless video cutting</h1>
+<p><time datetime="2025-12-01">December 1, 2025</time></p>
+</header>
+<p>Sadly, not many video editing tools support lossless cutting -- and even fewer support batch processing.</p>
+<p>Fortunately, FFmpeg supports lossless cutting using the <code>-ss hh:mm:ss</code> option and, being a command line tool, it can be used for batch processing.</p>
+<p>Here's an example (on POSIX) that cuts roughly the first 26 seconds off of each video in <code>Videos/</code> (lossless and aligned to keyframes), putting the resulting videos into <code>out/</code> (you can't edit in place losslessly):</p>
+<pre><code>find Videos -name '*.mp4' -exec ffmpeg -i {} -ss 26 -c copy out/{} \;
+</code></pre>
+<p>The <code>find</code> command runs the <code>-exec ...</code> command for each <code>*.mp4</code> file, with <code>{}</code> substituted for the filename (including any spaces--also note the <code>\;</code> at the end), so the FFmpeg command line is similar to:</p>
+<pre><code>ffmpeg -i video.mp4 -ss 26 -c copy out/video.mp4
+</code></pre>
+<p>Explanation:</p>
+<ul>
+<li><code>-i video.mp4</code>: Opens <code>video.mp4</code></li>
+<li><code>-ss 26</code>: Only keeps the video starting near 26 seconds (next keyframe)</li>
+<li><code>-c copy</code>: Copies video/audio streams (i.e. losslessly cuts) -- this option is needed to avoid re-encoding!</li>
+<li><code>out/video.mp4</code>: Writes the output to <code>out/video.mp4</code></li>
+</ul>
+<p>Note: on Windows, you could use <code>for %i in (*.mp4) do ffmpeg -i %i ...</code>.</p>
+
+<footer>
+<p>&crarr; <a href="index.html">Back</a>
+</footer>
+
+</main>
+</body>
+</html>
