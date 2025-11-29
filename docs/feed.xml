@@ -7,8 +7,18 @@
 <author>
 <name>Today, I Learned</name>
 </author>
-<updated>2025-10-29T00:00:00.000Z</updated>
+<updated>2025-11-29T00:00:00.000Z</updated>
 
+<entry>
+<title>Use Ctrl+p, Ctrl+q to detach from containers</title>
+<id>https://jaredkrinke.github.io/til/detach-from-docker-container.html</id>
+<link rel="alternate" href="https://jaredkrinke.github.io/til/detach-from-docker-container.html"/>
+<updated>2025-11-29T00:00:00.000Z</updated>
+<summary type="text">Use Ctrl+p, Ctrl+q to detach from containers</summary>
+<content type="html">&lt;p&gt;You can detach from a running, interactive Docker/Podman terminal using &lt;strong&gt;Ctrl+p, Ctrl+q&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;For example, if you start up a &lt;a href=&quot;https://jellyfin.org/&quot;&gt;Jellyfin&lt;/a&gt; container and then want to leave it running, you can just detach.&lt;/p&gt;
+</content>
+</entry>
 <entry>
 <title>Use &quot;socat&quot; for temporarily forwarding ports</title>
 <id>https://jaredkrinke.github.io/til/forward-ports-with-socat.html</id>
@@ -62,17 +72,6 @@
 &lt;span class=&quot;hl-identifier&quot;&gt;pasv_max_port&lt;/span&gt;&lt;span class=&quot;hl-operator&quot;&gt;=&lt;/span&gt;&lt;i class=&quot;hl-number&quot;&gt;2012&lt;/i&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;You&#039;ll also need to configure some clients to use passive mode in the first place. Vintage Internet Explorer appears to use passive mode by default, for what it&#039;s worth.&lt;/p&gt;
-</content>
-</entry>
-<entry>
-<title>retro-aim-server lets you use AOL Instant Messenger, ICQ, etc.</title>
-<id>https://jaredkrinke.github.io/til/aol-instant-messenger.html</id>
-<link rel="alternate" href="https://jaredkrinke.github.io/til/aol-instant-messenger.html"/>
-<updated>2025-08-22T00:00:00.000Z</updated>
-<summary type="text">retro-aim-server lets you use AOL Instant Messenger, ICQ, etc.</summary>
-<content type="html">&lt;p&gt;One vintage computing goal I had was to be able to use AOL Instant Messenger on vintage computers.&lt;/p&gt;
-&lt;p&gt;Fortunately, someone has implemented AIM&#039;s (and ICQ&#039;s) server in a single portable Go binary: &lt;a href=&quot;https://github.com/mk6i/retro-aim-server&quot;&gt;retro-aim-server&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Note: Legacy AIM is unencrypted and vintage computers shouldn&#039;t be directly connected to the Internet, so if you&#039;ll only want to set this up on a virtual private network, e.g. using &lt;a href=&quot;https://www.wireguard.com/&quot;&gt;WireGuard&lt;/a&gt;.&lt;/p&gt;
 </content>
 </entry>
 </feed>
