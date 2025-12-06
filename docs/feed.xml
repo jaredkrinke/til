@@ -7,8 +7,33 @@
 <author>
 <name>Today, I Learned</name>
 </author>
-<updated>2025-12-01T00:00:00.000Z</updated>
+<updated>2025-12-06T00:00:00.000Z</updated>
 
+<entry>
+<title>Busybox includes a DHCP server (&quot;udhcpd&quot;)</title>
+<id>https://jaredkrinke.github.io/til/busybox-dhcp-server.html</id>
+<link rel="alternate" href="https://jaredkrinke.github.io/til/busybox-dhcp-server.html"/>
+<updated>2025-12-06T00:00:00.000Z</updated>
+<summary type="text">Busybox includes a DHCP server (&quot;udhcpd&quot;)</summary>
+<content type="html">&lt;p&gt;On an isolated network, you may want to run a DHCP server. Luckily, you might already have one installed via Busybox:&lt;/p&gt;
+&lt;p&gt;Just create a symlink to &lt;code&gt;busybox&lt;/code&gt; named &lt;code&gt;udhcpd&lt;/code&gt;!&lt;/p&gt;
+&lt;p&gt;Sample config:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;interface eth0
+
+start 172.16.0.50
+end 172.16.0.99
+
+option subnet 255.255.255.0
+option router 172.16.0.1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Just run the symlinked binary with the config file as an argument (&lt;code&gt;-f&lt;/code&gt; runs in the foreground, for monitornig purposes):&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;./udhcpd -f udhcpd.conf
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The config above only assigns IPs on the &lt;code&gt;eth0&lt;/code&gt; interface (useful if you&#039;re e.g. routing to a VPN on another interface), providing IPs on the specified range, with a gateway of &lt;code&gt;172.16.0.1&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Oddly, &lt;code&gt;netstat -tulpn&lt;/code&gt; shows the process listening on all IPs, but it didn&#039;t respond on other interfaces, so it seems to work as intended. I wouldn&#039;t recommend running a Busybox DHCP server on an exposed network, just in case.&lt;/p&gt;
+&lt;p&gt;My use case was running an isolated network of vintage computers locally and routing them through a WireGuard VPN over the Internet to other locations. Having a DHCP server allowed me to just plug a router into a Raspberry Pi running WireGuard and this DHCP server.&lt;/p&gt;
+</content>
+</entry>
 <entry>
 <title>FFmpeg can be used for batch lossless video cutting</title>
 <id>https://jaredkrinke.github.io/til/batch-lossless-cut-with-ffmpeg.html</id>
@@ -71,16 +96,6 @@
 &lt;li&gt;UDP is connectionless, so &lt;code&gt;socat&lt;/code&gt; UDP forks won&#039;t automatically terminate unless a timeout is specified using &lt;code&gt;-T&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;reuseaddr&lt;/code&gt; might not be needed -- I haven&#039;t tested it in depth&lt;/li&gt;
 &lt;/ul&gt;
-</content>
-</entry>
-<entry>
-<title>OpenSuperClone can clone failing rotational hard disks</title>
-<id>https://jaredkrinke.github.io/til/clone-failing-hdd.html</id>
-<link rel="alternate" href="https://jaredkrinke.github.io/til/clone-failing-hdd.html"/>
-<updated>2025-10-01T00:00:00.000Z</updated>
-<summary type="text">OpenSuperClone can clone failing rotational hard disks</summary>
-<content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/ISpillMyDrink/OpenSuperClone&quot;&gt;OpenSuperClone&lt;/a&gt; can cautiously clone failing rotational hard disks, similar to &lt;a href=&quot;https://www.gnu.org/software/ddrescue/&quot;&gt;ddrescue&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Once cloned, you can safely attempt reading from the clone and maybe even try repairing the file system or scanning for orphaned files.&lt;/p&gt;
 </content>
 </entry>
 </feed>

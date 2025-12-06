@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Busybox includes a DHCP server (&quot;udhcpd&quot;)</title>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<link rel="stylesheet" href="style.css" />
+<link rel="icon" href="data:," />
+
+</head>
+<body>
+<main>
+<header>
+<h1>Busybox includes a DHCP server (&quot;udhcpd&quot;)</h1>
+<p><time datetime="2025-12-06">December 6, 2025</time></p>
+</header>
+<p>On an isolated network, you may want to run a DHCP server. Luckily, you might already have one installed via Busybox:</p>
+<p>Just create a symlink to <code>busybox</code> named <code>udhcpd</code>!</p>
+<p>Sample config:</p>
+<pre><code>interface eth0
+
+start 172.16.0.50
+end 172.16.0.99
+
+option subnet 255.255.255.0
+option router 172.16.0.1
+</code></pre>
+<p>Just run the symlinked binary with the config file as an argument (<code>-f</code> runs in the foreground, for monitornig purposes):</p>
+<pre><code>./udhcpd -f udhcpd.conf
+</code></pre>
+<p>The config above only assigns IPs on the <code>eth0</code> interface (useful if you're e.g. routing to a VPN on another interface), providing IPs on the specified range, with a gateway of <code>172.16.0.1</code>.</p>
+<p>Oddly, <code>netstat -tulpn</code> shows the process listening on all IPs, but it didn't respond on other interfaces, so it seems to work as intended. I wouldn't recommend running a Busybox DHCP server on an exposed network, just in case.</p>
+<p>My use case was running an isolated network of vintage computers locally and routing them through a WireGuard VPN over the Internet to other locations. Having a DHCP server allowed me to just plug a router into a Raspberry Pi running WireGuard and this DHCP server.</p>
+
+<footer>
+<p>&crarr; <a href="index.html">Back</a>
+</footer>
+
+</main>
+</body>
+</html>
