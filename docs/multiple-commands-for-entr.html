@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Use &quot;sh -c&quot; to supply multiple commands to &quot;entr&quot;</title>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<link rel="stylesheet" href="style.css" />
+<link rel="icon" href="data:," />
+
+</head>
+<body>
+<main>
+<header>
+<h1>Use &quot;sh -c&quot; to supply multiple commands to &quot;entr&quot;</h1>
+<p><time datetime="2025-12-29">December 29, 2025</time></p>
+</header>
+<p><a href="https://github.com/eradman/entr">entr</a> lets you re-run commands when files change. It's great for iterating on code because you don't have to switch contexts; your code just re-runs when you save the file.</p>
+<p>If you need to run multiple commands or redirect input/output, just invoke your shell, e.g.:</p>
+<pre><code>ls foo.c |entr sh -c &quot;make &amp;&amp; make test&quot;
+</code></pre>
+
+<footer>
+<p>&crarr; <a href="index.html">Back</a>
+</footer>
+
+</main>
+</body>
+</html>
