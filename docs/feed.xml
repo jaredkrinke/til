@@ -7,8 +7,18 @@
 <author>
 <name>Today, I Learned</name>
 </author>
-<updated>2025-12-06T00:00:00.000Z</updated>
+<updated>2025-12-28T00:00:00.000Z</updated>
 
+<entry>
+<title>Use &quot;background=dark&quot; in Vim</title>
+<id>https://jaredkrinke.github.io/til/vim-dark-mode.html</id>
+<link rel="alternate" href="https://jaredkrinke.github.io/til/vim-dark-mode.html"/>
+<updated>2025-12-28T00:00:00.000Z</updated>
+<summary type="text">Use &quot;background=dark&quot; in Vim</summary>
+<content type="html">&lt;p&gt;Use &lt;code&gt;:set background=dark&lt;/code&gt; in Vim when you&#039;re using a console with a dark background (i.e. every console I&#039;ve ever used).&lt;/p&gt;
+&lt;p&gt;I don&#039;t understand why this isn&#039;t the default for Vim, but at least I can finally now read comment blocks.&lt;/p&gt;
+</content>
+</entry>
 <entry>
 <title>Busybox includes a DHCP server (&quot;udhcpd&quot;)</title>
 <id>https://jaredkrinke.github.io/til/busybox-dhcp-server.html</id>
@@ -78,24 +88,6 @@ option router 172.16.0.1
 <summary type="text">Use Ctrl+p, Ctrl+q to detach from containers</summary>
 <content type="html">&lt;p&gt;You can detach from a running, interactive Docker/Podman terminal using &lt;strong&gt;Ctrl+p, Ctrl+q&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;For example, if you start up a &lt;a href=&quot;https://jellyfin.org/&quot;&gt;Jellyfin&lt;/a&gt; container and then want to leave it running, you can just detach.&lt;/p&gt;
-</content>
-</entry>
-<entry>
-<title>Use &quot;socat&quot; for temporarily forwarding ports</title>
-<id>https://jaredkrinke.github.io/til/forward-ports-with-socat.html</id>
-<link rel="alternate" href="https://jaredkrinke.github.io/til/forward-ports-with-socat.html"/>
-<updated>2025-10-29T00:00:00.000Z</updated>
-<summary type="text">Use &quot;socat&quot; for temporarily forwarding ports</summary>
-<content type="html">&lt;p&gt;Temporarily forward ports on Linux with the &lt;code&gt;socat&lt;/code&gt; tool:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-txt&quot;&gt;socat UDP4-LISTEN:12345,fork,reuseaddr,bind=127.0.0.1 UDP4:1.2.3.4:34567
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;This forwards UDP datagrams from 127.0.0.1 on port 12345 to a remote host 1.2.3.4, port 34567.  Use &amp;quot;TCP&amp;quot; instead of &amp;quot;UDP&amp;quot; to forward TCP streams.&lt;/p&gt;
-&lt;p&gt;Notes:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;fork&lt;/code&gt; means it will fork a new process for each remote host&lt;/li&gt;
-&lt;li&gt;UDP is connectionless, so &lt;code&gt;socat&lt;/code&gt; UDP forks won&#039;t automatically terminate unless a timeout is specified using &lt;code&gt;-T&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;reuseaddr&lt;/code&gt; might not be needed -- I haven&#039;t tested it in depth&lt;/li&gt;
-&lt;/ul&gt;
 </content>
 </entry>
 </feed>

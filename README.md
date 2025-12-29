@@ -4,6 +4,7 @@ Here's a collection of things I've learned or found interesting:
 # Recent posts
 | Date | Title |
 |---|---|
+| 2025-12-28 | [Use "background=dark" in Vim](https://jaredkrinke.github.io/til/vim-dark-mode.html) |
 | 2025-12-06 | [Busybox includes a DHCP server ("udhcpd")](https://jaredkrinke.github.io/til/busybox-dhcp-server.html) |
 | 2025-12-01 | [FFmpeg can be used for batch lossless video cutting](https://jaredkrinke.github.io/til/batch-lossless-cut-with-ffmpeg.html) |
 | 2025-11-30 | [Use "find -exec" instead of "xargs"](https://jaredkrinke.github.io/til/find-exec-instead-of-xargs.html) |
@@ -11,7 +12,6 @@ Here's a collection of things I've learned or found interesting:
 | 2025-10-29 | [Use "socat" for temporarily forwarding ports](https://jaredkrinke.github.io/til/forward-ports-with-socat.html) |
 | 2025-10-01 | [OpenSuperClone can clone failing rotational hard disks](https://jaredkrinke.github.io/til/clone-failing-hdd.html) |
 | 2025-09-05 | [Use Shift+F10 to open a command prompt during Windows 11 setup](https://jaredkrinke.github.io/til/command-prompt-in-win11-setup.html) |
-| 2025-08-27 | [Use FTP's "passive" mode when behind NAT](https://jaredkrinke.github.io/til/use-passive-ftp.html) |
 
 # All posts, by category
 
@@ -71,6 +71,7 @@ Here's a collection of things I've learned or found interesting:
 * [Use ":read !" to insert the result of a shell command in Vim](https://jaredkrinke.github.io/til/vim-read-shell-cmd.html)
 * [Automatically wrapping lines in Vim and Emacs](https://jaredkrinke.github.io/til/wrap-lines-vim-emacs.html)
 * [Use ":set paste" when pasting into Vim](https://jaredkrinke.github.io/til/vim-paste-mode.html)
+* [Use "background=dark" in Vim](https://jaredkrinke.github.io/til/vim-dark-mode.html)
 * [Difference between Vim's tabstop, softtabstop, and shiftwidth](https://jaredkrinke.github.io/til/vim-indentation.html)
 * [Use "exuberant-ctags" for "go to definition" in Vim](https://jaredkrinke.github.io/til/vim-code-indexing.html)
 * [Use ":terminal" in Vim for a better integrated terminal](https://jaredkrinke.github.io/til/vim-terminal.html)
