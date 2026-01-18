@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Use &quot;desat&quot; option to tweak HDR-to-SDR in Handbrake</title>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<link rel="stylesheet" href="style.css" />
+<link rel="icon" href="data:," />
+
+</head>
+<body>
+<main>
+<header>
+<h1>Use &quot;desat&quot; option to tweak HDR-to-SDR in Handbrake</h1>
+<p><time datetime="2026-01-18">January 18, 2026</time></p>
+</header>
+<p>When converting HDR video to SDR in Handbrake, e.g. for playing on a Roku TV, you can <strong>customize the saturation</strong> using the <code>desat</code> setting (under &quot;Custom&quot; for &quot;Colorspace&quot;). Example:</p>
+<pre><code>primaries=bt709:transfer=bt709:matrix=bt709:tonemap=hable:desat=0.5
+</code></pre>
+<p>I ran into this because my Roku TV would report an error (something about &quot;couldn't retrieve the data for the selected item from the server&quot;) when trying to play some videos via Jellyfin. The culprit turned out to be that <a href="https://jellyfin.org/docs/general/clients/codec-support/#hdr-support">Roku TVs don't support HDR in Jellyfin</a>, and I needed to convert the HDR video to SDR.</p>
+<p>Unfortunately, <strong>the default tonemapping resulted in crazy saturated colors</strong>, so I needed to decrease the saturation somehow. Fortunately, someone had already pointed out this and many other options in <a href="https://github.com/HandBrake/HandBrake/issues/7198">this GitHub issue</a>.</p>
+
+<footer>
+<p>&crarr; <a href="index.html">Back</a>
+</footer>
+
+</main>
+</body>
+</html>

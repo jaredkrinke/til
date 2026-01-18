@@ -4,6 +4,7 @@ Here's a collection of things I've learned or found interesting:
 # Recent posts
 | Date | Title |
 |---|---|
+| 2026-01-18 | [Use "desat" option to tweak HDR-to-SDR in Handbrake](https://jaredkrinke.github.io/til/hdr-to-sdr-in-handbrake.html) |
 | 2025-12-29 | [Use "sh -c" to supply multiple commands to "entr"](https://jaredkrinke.github.io/til/multiple-commands-for-entr.html) |
 | 2025-12-28 | [Use "background=dark" in Vim](https://jaredkrinke.github.io/til/vim-dark-mode.html) |
 | 2025-12-06 | [Busybox includes a DHCP server ("udhcpd")](https://jaredkrinke.github.io/til/busybox-dhcp-server.html) |
@@ -11,7 +12,6 @@ Here's a collection of things I've learned or found interesting:
 | 2025-11-30 | [Use "find -exec" instead of "xargs"](https://jaredkrinke.github.io/til/find-exec-instead-of-xargs.html) |
 | 2025-11-29 | [Use Ctrl+p, Ctrl+q to detach from containers](https://jaredkrinke.github.io/til/detach-from-docker-container.html) |
 | 2025-10-29 | [Use "socat" for temporarily forwarding ports](https://jaredkrinke.github.io/til/forward-ports-with-socat.html) |
-| 2025-10-01 | [OpenSuperClone can clone failing rotational hard disks](https://jaredkrinke.github.io/til/clone-failing-hdd.html) |
 
 # All posts, by category
 
@@ -42,6 +42,7 @@ Here's a collection of things I've learned or found interesting:
 * [Git commits have both an author and a committer](https://jaredkrinke.github.io/til/git-commit-vs-author.html)
 
 ## #misc
+* [Use "desat" option to tweak HDR-to-SDR in Handbrake](https://jaredkrinke.github.io/til/hdr-to-sdr-in-handbrake.html)
 * [FidoNet was a network of bulletin board systems](https://jaredkrinke.github.io/til/fidonet.html)
 * [Use Shift+F10 to open a command prompt during Windows 11 setup](https://jaredkrinke.github.io/til/command-prompt-in-win11-setup.html)
 * [Busybox includes a DHCP server ("udhcpd")](https://jaredkrinke.github.io/til/busybox-dhcp-server.html)

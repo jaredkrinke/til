@@ -7,8 +7,21 @@
 <author>
 <name>Today, I Learned</name>
 </author>
-<updated>2025-12-29T00:00:00.000Z</updated>
+<updated>2026-01-18T00:00:00.000Z</updated>
 
+<entry>
+<title>Use &quot;desat&quot; option to tweak HDR-to-SDR in Handbrake</title>
+<id>https://jaredkrinke.github.io/til/hdr-to-sdr-in-handbrake.html</id>
+<link rel="alternate" href="https://jaredkrinke.github.io/til/hdr-to-sdr-in-handbrake.html"/>
+<updated>2026-01-18T00:00:00.000Z</updated>
+<summary type="text">Use &quot;desat&quot; option to tweak HDR-to-SDR in Handbrake</summary>
+<content type="html">&lt;p&gt;When converting HDR video to SDR in Handbrake, e.g. for playing on a Roku TV, you can &lt;strong&gt;customize the saturation&lt;/strong&gt; using the &lt;code&gt;desat&lt;/code&gt; setting (under &amp;quot;Custom&amp;quot; for &amp;quot;Colorspace&amp;quot;). Example:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;primaries=bt709:transfer=bt709:matrix=bt709:tonemap=hable:desat=0.5
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I ran into this because my Roku TV would report an error (something about &amp;quot;couldn&#039;t retrieve the data for the selected item from the server&amp;quot;) when trying to play some videos via Jellyfin. The culprit turned out to be that &lt;a href=&quot;https://jellyfin.org/docs/general/clients/codec-support/#hdr-support&quot;&gt;Roku TVs don&#039;t support HDR in Jellyfin&lt;/a&gt;, and I needed to convert the HDR video to SDR.&lt;/p&gt;
+&lt;p&gt;Unfortunately, &lt;strong&gt;the default tonemapping resulted in crazy saturated colors&lt;/strong&gt;, so I needed to decrease the saturation somehow. Fortunately, someone had already pointed out this and many other options in &lt;a href=&quot;https://github.com/HandBrake/HandBrake/issues/7198&quot;&gt;this GitHub issue&lt;/a&gt;.&lt;/p&gt;
+</content>
+</entry>
 <entry>
 <title>Use &quot;sh -c&quot; to supply multiple commands to &quot;entr&quot;</title>
 <id>https://jaredkrinke.github.io/til/multiple-commands-for-entr.html</id>
@@ -78,18 +91,6 @@ option router 172.16.0.1
 &lt;li&gt;&lt;code&gt;out/video.mp4&lt;/code&gt;: Writes the output to &lt;code&gt;out/video.mp4&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Note: on Windows, you could use &lt;code&gt;for %i in (*.mp4) do ffmpeg -i %i ...&lt;/code&gt;.&lt;/p&gt;
-</content>
-</entry>
-<entry>
-<title>Use &quot;find -exec&quot; instead of &quot;xargs&quot;</title>
-<id>https://jaredkrinke.github.io/til/find-exec-instead-of-xargs.html</id>
-<link rel="alternate" href="https://jaredkrinke.github.io/til/find-exec-instead-of-xargs.html"/>
-<updated>2025-11-30T00:00:00.000Z</updated>
-<summary type="text">Use &quot;find -exec&quot; instead of &quot;xargs&quot;</summary>
-<content type="html">&lt;p&gt;If you need to run a command on each file under a directory structure, use the &lt;code&gt;-exec&lt;/code&gt; option of &lt;code&gt;find&lt;/code&gt; (it will substitute a file for each &lt;code&gt;{}&lt;/code&gt;, and you must terminate with &lt;code&gt;\;&lt;/code&gt;):&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;find some-dir -name &#039;*.mp4&#039; -exec ffmpeg -i {} out/{} \;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;code&gt;find ... -exec&lt;/code&gt; is better than piping to &lt;code&gt;xargs&lt;/code&gt; because it handles filenames with spaces seamlessly.&lt;/p&gt;
 </content>
 </entry>
 </feed>
