@@ -7,8 +7,21 @@
 <author>
 <name>Today, I Learned</name>
 </author>
-<updated>2026-01-18T00:00:00.000Z</updated>
+<updated>2026-02-13T00:00:00.000Z</updated>
 
+<entry>
+<title>Use &quot;GO386=softfloat&quot; to compile Go for Pentium</title>
+<id>https://jaredkrinke.github.io/til/go386-softfloat-for-pentium.html</id>
+<link rel="alternate" href="https://jaredkrinke.github.io/til/go386-softfloat-for-pentium.html"/>
+<updated>2026-02-13T00:00:00.000Z</updated>
+<summary type="text">Use &quot;GO386=softfloat&quot; to compile Go for Pentium</summary>
+<content type="html">&lt;p&gt;Cross-compiling is trivial with pure-Go projects. For example, to compile for a Pentium (maybe even a 486 DX?) running NetBSD, just set a few variables:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;GOOS=netbsd GOARCH=386 GO386=softfloat make
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The &lt;code&gt;GO386=softfloat&lt;/code&gt; setting is necessary for Pentium I/II--without specifying it, &lt;a href=&quot;https://github.com/golang/go/issues/40255&quot;&gt;Go 1.16 requires SSE2 by default for &amp;quot;GOARCH=386&amp;quot;&lt;/a&gt;, and I believe that&#039;s only supported on Pentium III+.&lt;/p&gt;
+&lt;p&gt;Why do I know this? I have a late &#039;90s Dell Latitude CP (Pentium 233 MHz with 128 MB RAM) running NetBSD and I wanted to run the &lt;a href=&quot;https://aerc-mail.org/&quot;&gt;aerc&lt;/a&gt; mail client on it. Unfortunately, the prebuilt &amp;quot;i386&amp;quot; NetBSD package crashed with &lt;code&gt;SIGILL&lt;/code&gt; (illegal instruction). Loading the core dump into GDB revealed that an &lt;code&gt;xorps&lt;/code&gt; instruction was the problem because that instruction was introduced as part of SSE2 (well after my Pentium was manufactured). I have not yet investigated whether or not it&#039;s expected for prebuilt binary packages on &amp;quot;i386&amp;quot; NetBSD to require a Pentium III, but in my case recompiling the pure-Go aerc project was trivial and I can now read modern email on a nearly 30 year old computer.&lt;/p&gt;
+</content>
+</entry>
 <entry>
 <title>Use &quot;desat&quot; option to tweak HDR-to-SDR in Handbrake</title>
 <id>https://jaredkrinke.github.io/til/hdr-to-sdr-in-handbrake.html</id>
@@ -67,30 +80,6 @@ option router 172.16.0.1
 &lt;p&gt;The config above only assigns IPs on the &lt;code&gt;eth0&lt;/code&gt; interface (useful if you&#039;re e.g. routing to a VPN on another interface), providing IPs on the specified range, with a gateway of &lt;code&gt;172.16.0.1&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Oddly, &lt;code&gt;netstat -tulpn&lt;/code&gt; shows the process listening on all IPs, but it didn&#039;t respond on other interfaces, so it seems to work as intended. I wouldn&#039;t recommend running a Busybox DHCP server on an exposed network, just in case.&lt;/p&gt;
 &lt;p&gt;My use case was running an isolated network of vintage computers locally and routing them through a WireGuard VPN over the Internet to other locations. Having a DHCP server allowed me to just plug a router into a Raspberry Pi running WireGuard and this DHCP server.&lt;/p&gt;
-</content>
-</entry>
-<entry>
-<title>FFmpeg can be used for batch lossless video cutting</title>
-<id>https://jaredkrinke.github.io/til/batch-lossless-cut-with-ffmpeg.html</id>
-<link rel="alternate" href="https://jaredkrinke.github.io/til/batch-lossless-cut-with-ffmpeg.html"/>
-<updated>2025-12-01T00:00:00.000Z</updated>
-<summary type="text">FFmpeg can be used for batch lossless video cutting</summary>
-<content type="html">&lt;p&gt;Sadly, not many video editing tools support lossless cutting -- and even fewer support batch processing.&lt;/p&gt;
-&lt;p&gt;Fortunately, FFmpeg supports lossless cutting using the &lt;code&gt;-ss hh:mm:ss&lt;/code&gt; option and, being a command line tool, it can be used for batch processing.&lt;/p&gt;
-&lt;p&gt;Here&#039;s an example (on POSIX) that cuts roughly the first 26 seconds off of each video in &lt;code&gt;Videos/&lt;/code&gt; (lossless and aligned to keyframes), putting the resulting videos into &lt;code&gt;out/&lt;/code&gt; (you can&#039;t edit in place losslessly):&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;find Videos -name &#039;*.mp4&#039; -exec ffmpeg -i {} -ss 26 -c copy out/{} \;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The &lt;code&gt;find&lt;/code&gt; command runs the &lt;code&gt;-exec ...&lt;/code&gt; command for each &lt;code&gt;*.mp4&lt;/code&gt; file, with &lt;code&gt;{}&lt;/code&gt; substituted for the filename (including any spaces--also note the &lt;code&gt;\;&lt;/code&gt; at the end), so the FFmpeg command line is similar to:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;ffmpeg -i video.mp4 -ss 26 -c copy out/video.mp4
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Explanation:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;-i video.mp4&lt;/code&gt;: Opens &lt;code&gt;video.mp4&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;-ss 26&lt;/code&gt;: Only keeps the video starting near 26 seconds (next keyframe)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;-c copy&lt;/code&gt;: Copies video/audio streams (i.e. losslessly cuts) -- this option is needed to avoid re-encoding!&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;out/video.mp4&lt;/code&gt;: Writes the output to &lt;code&gt;out/video.mp4&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Note: on Windows, you could use &lt;code&gt;for %i in (*.mp4) do ffmpeg -i %i ...&lt;/code&gt;.&lt;/p&gt;
 </content>
 </entry>
 </feed>

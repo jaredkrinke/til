@@ -4,6 +4,7 @@ Here's a collection of things I've learned or found interesting:
 # Recent posts
 | Date | Title |
 |---|---|
+| 2026-02-13 | [Use "GO386=softfloat" to compile Go for Pentium](https://jaredkrinke.github.io/til/go386-softfloat-for-pentium.html) |
 | 2026-01-18 | [Use "desat" option to tweak HDR-to-SDR in Handbrake](https://jaredkrinke.github.io/til/hdr-to-sdr-in-handbrake.html) |
 | 2025-12-29 | [Use "sh -c" to supply multiple commands to "entr"](https://jaredkrinke.github.io/til/multiple-commands-for-entr.html) |
 | 2025-12-28 | [Use "background=dark" in Vim](https://jaredkrinke.github.io/til/vim-dark-mode.html) |
@@ -11,7 +12,6 @@ Here's a collection of things I've learned or found interesting:
 | 2025-12-01 | [FFmpeg can be used for batch lossless video cutting](https://jaredkrinke.github.io/til/batch-lossless-cut-with-ffmpeg.html) |
 | 2025-11-30 | [Use "find -exec" instead of "xargs"](https://jaredkrinke.github.io/til/find-exec-instead-of-xargs.html) |
 | 2025-11-29 | [Use Ctrl+p, Ctrl+q to detach from containers](https://jaredkrinke.github.io/til/detach-from-docker-container.html) |
-| 2025-10-29 | [Use "socat" for temporarily forwarding ports](https://jaredkrinke.github.io/til/forward-ports-with-socat.html) |
 
 # All posts, by category
 
@@ -49,6 +49,7 @@ Here's a collection of things I've learned or found interesting:
 * [Use FTP's "passive" mode when behind NAT](https://jaredkrinke.github.io/til/use-passive-ftp.html)
 * [Use "sh -c" to supply multiple commands to "entr"](https://jaredkrinke.github.io/til/multiple-commands-for-entr.html)
 * [FFmpeg can be used for batch lossless video cutting](https://jaredkrinke.github.io/til/batch-lossless-cut-with-ffmpeg.html)
+* [Use "GO386=softfloat" to compile Go for Pentium](https://jaredkrinke.github.io/til/go386-softfloat-for-pentium.html)
 * [retro-aim-server lets you use AOL Instant Messenger, ICQ, etc.](https://jaredkrinke.github.io/til/aol-instant-messenger.html)
 * [Use "socat" for temporarily forwarding ports](https://jaredkrinke.github.io/til/forward-ports-with-socat.html)
 * [Use Ctrl+p, Ctrl+q to detach from containers](https://jaredkrinke.github.io/til/detach-from-docker-container.html)
