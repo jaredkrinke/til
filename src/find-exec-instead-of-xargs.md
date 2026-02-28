@@ -11,3 +11,5 @@ find some-dir -name '*.mp4' -exec ffmpeg -i {} out/{} \;
 
 `find ... -exec` is better than piping to `xargs` because it handles filenames with spaces seamlessly.
 
+**Update**: it was pointed out to me that `find` has a `-print0` option that separates files with a null character, allowing it to be used with `xargs -0`. Regardless, I prefer `find ... -exec ...` because it's shorter and simpler.
+

@@ -20,6 +20,7 @@
 <pre><code>find some-dir -name '*.mp4' -exec ffmpeg -i {} out/{} \;
 </code></pre>
 <p><code>find ... -exec</code> is better than piping to <code>xargs</code> because it handles filenames with spaces seamlessly.</p>
+<p><strong>Update</strong>: it was pointed out to me that <code>find</code> has a <code>-print0</code> option that separates files with a null character, allowing it to be used with <code>xargs -0</code>. Regardless, I prefer <code>find ... -exec ...</code> because it's shorter and simpler.</p>
 
 <footer>
 <a href="topics/unix.html">#unix</a>
